@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\App.xaml
-4901970264
+41921686376
 
-8-3896567
+843971517
 194101785492
-CreateAccountWindow.xaml;LoadAccountWindow.xaml;LoginWindow.xaml;MainWindow.xaml;
+CreateAccount\CreateAccountWindow.xaml;LoadAccount\LoadAccountWindow.xaml;Login\LoginWindow.xaml;Main\MainWindow.xaml;
 
-True
+False
 

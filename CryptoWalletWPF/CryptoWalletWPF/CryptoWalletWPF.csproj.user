@@ -7,15 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="LoginWindow.xaml.cs">
+    <Compile Update="CreateAccount\CreateAccountVM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LoadAccount\LoadAccountVM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login\LoginVM.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="LoginWindow.xaml">
+    <Page Update="CreateAccount\CreateAccountWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="LoadAccount\LoadAccountWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Main\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

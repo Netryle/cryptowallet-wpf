@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoWalletWPF"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="600">
+        Title="LoginWindow" Height="400" Width="600">
     <Grid>
         <ComboBox x:Name="NetworkChooserComboBox" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Choose your blockchain network" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top"/>

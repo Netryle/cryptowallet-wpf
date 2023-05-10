@@ -10,17 +10,13 @@ namespace CryptoWalletWPF.ViewModels
 {
     class LoginVM : INotifyPropertyChanged
     {
-        private List<string> networkList 
+        public List<string> NetworkList = new List<string>()
         {
-            get 
-            {
-                return this.networkList;
-            }
-            set
-            {
-                this.networkList = value;
-            }
-        }
+            "Local",
+            "Mainnet",
+            "Sepolia",
+            "Goerli"
+        };
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

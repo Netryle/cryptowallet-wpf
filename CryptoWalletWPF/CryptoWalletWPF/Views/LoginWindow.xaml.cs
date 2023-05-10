@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptoWalletWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace CryptoWalletWPF
             InitializeComponent();
         }
 
+        LoginVM DataContext = new LoginVM();
 
     }
 }

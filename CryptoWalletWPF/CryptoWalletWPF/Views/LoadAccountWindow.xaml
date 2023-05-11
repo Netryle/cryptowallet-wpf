@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoWalletWPF"
         mc:Ignorable="d"
-        Title="LoadAccountWindow" Height="450" Width="800">
+        Title="LoadAccountWindow" Height="400" Width="600">
     <Grid>
-        
+        <Label Content="Load from" HorizontalAlignment="Center" Margin="0,94,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button x:Name="privateKeyButton" Content="Private key" HorizontalAlignment="Center" Margin="0,154,0,0" VerticalAlignment="Top" Width="130" Height="35"/>
+        <Button x:Name="accountFileButton" Content="Account file" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="35" Margin="0,194,0,0"/>
+        <Button x:Name="walletHDButton" Content="HD Wallet" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="35" Margin="0,234,0,0"/>
+
     </Grid>
 </Window>

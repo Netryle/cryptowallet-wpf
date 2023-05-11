@@ -24,9 +24,8 @@ namespace CryptoWalletWPF
         public LoginWindow()
         {
             InitializeComponent();
+            DataContext = new LoginViewModel();
         }
-
-        LoginVM DataContext = new LoginVM();
 
     }
 }

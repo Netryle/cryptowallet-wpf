@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CryptoWalletWPF.ViewModels
 {
-    class LoadAccountVM : INotifyPropertyChanged
+    class LoadAccountViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
     }

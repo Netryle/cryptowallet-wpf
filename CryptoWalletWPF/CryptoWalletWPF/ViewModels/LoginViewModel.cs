@@ -8,15 +8,32 @@ using System.Threading.Tasks;
 
 namespace CryptoWalletWPF.ViewModels
 {
-    class LoginVM : INotifyPropertyChanged
+    class LoginViewModel : INotifyPropertyChanged
     {
-        public List<string> NetworkList = new List<string>()
+        private string selectedNetwork;
+
+        public List<string> NetworkList { get; set; } = new List<string>()
         {
             "Local",
             "Mainnet",
             "Sepolia",
             "Goerli"
         };
+
+        public string SelectedNetwork
+        {
+            get { return selectedNetwork; }
+            set
+            {
+                selectedNetwork = value;
+                OnPropertyChanged("SelectedNetwork");
+            }
+        } 
+
+        public LoginViewModel()
+        {
+            selectedNetwork = NetworkList.FirstOrDefault();
+        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

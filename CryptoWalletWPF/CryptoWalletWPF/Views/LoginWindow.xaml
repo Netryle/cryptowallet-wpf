@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:CryptoWalletWPF.ViewModels"
         mc:Ignorable="d"
         Title="LoginWindow" Height="400" Width="600">
-    <Window.DataContext>
-        <local:LoginVM/>
-    </Window.DataContext>
     <Grid>
         <ComboBox  ItemsSource="{Binding NetworkList}" x:Name="NetworkChooserComboBox" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Choose your blockchain network" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top"/>

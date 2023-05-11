@@ -25,4 +25,3 @@ D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\LoadAccountWindow.baml
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\LoginWindow.baml
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\MainWindow.baml
-D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs

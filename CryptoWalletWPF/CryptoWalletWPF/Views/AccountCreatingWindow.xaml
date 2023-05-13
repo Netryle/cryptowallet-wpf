@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoWalletWPF.Views"
         mc:Ignorable="d"
-        Title="AccountCreatingWindow" Height="450" Width="800">
+        Title="AccountCreatingWindow" Height="400" Width="600">
     <Grid>
-        
+        <Label Content="Your private key:" HorizontalAlignment="Center" Margin="0,111,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox
+            x:Name="privateKeyTextBox" Height="20" Margin="140,152,140,212" Width="320" IsReadOnly="True"
+            />
+        <Button x:Name="copyButton" Content="C" HorizontalAlignment="Left" Margin="479,150,0,0" VerticalAlignment="Top" Height="25" Width="26"/>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="317,218,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="222,218,0,0" VerticalAlignment="Top" Width="67"/>
+
     </Grid>
 </Window>

@@ -69,7 +69,7 @@ namespace CryptoWalletWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CryptoWalletWPF;V1.0.0.0;component/views/createaccountwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CryptoWalletWPF;component/views/createaccountwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\CreateAccountWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

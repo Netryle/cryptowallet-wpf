@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AccountCreatingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CreateAccountWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\HDWalletCreatingWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\LoadAccountWindow.xaml.cs">
@@ -18,7 +24,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AccountCreatingWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\CreateAccountWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HDWalletCreatingWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LoadAccountWindow.xaml">

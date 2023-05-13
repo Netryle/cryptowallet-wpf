@@ -16,6 +16,7 @@
         <PasswordBox x:Name="confirmPasswordBox" HorizontalAlignment="Left" Margin="208,274,0,0" VerticalAlignment="Top" Width="197"/>
         <Button Content="Create" HorizontalAlignment="Left" Margin="317,312,0,0" VerticalAlignment="Top" Width="67"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="222,312,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button x:Name="copyButton" Content="C" HorizontalAlignment="Left" Margin="410,95,0,0" VerticalAlignment="Top" Height="25" Width="26"/>
 
     </Grid>
 </Window>

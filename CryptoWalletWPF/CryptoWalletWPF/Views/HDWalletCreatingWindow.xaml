@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="HDWalletCreatingWindow" Height="400" Width="600">
     <Grid>
-        
+        <Label Content="Your seed phrase" HorizontalAlignment="Left" Margin="222,37,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="(Save it for future login and recovery)" HorizontalAlignment="Left" Margin="199,64,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBox x:Name="seedPhraseTextBox" HorizontalAlignment="Left" Margin="199,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="101" TextAlignment="Center" IsReadOnly="True"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="199,198,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
+        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="199,246,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="208,226,0,0" VerticalAlignment="Top" Width="197"/>
+        <PasswordBox x:Name="confirmPasswordBox" HorizontalAlignment="Left" Margin="208,274,0,0" VerticalAlignment="Top" Width="197"/>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="317,312,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="222,312,0,0" VerticalAlignment="Top" Width="67"/>
+
     </Grid>
 </Window>

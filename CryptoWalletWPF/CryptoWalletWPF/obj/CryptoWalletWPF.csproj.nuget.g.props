@@ -12,4 +12,9 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\netry\.nuget\packages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgShowMeTheXAML_MSBuild Condition=" '$(PkgShowMeTheXAML_MSBuild)' == '' ">C:\Users\netry\.nuget\packages\showmethexaml.msbuild\2.0.0</PkgShowMeTheXAML_MSBuild>
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\netry\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.39</PkgMicrosoft_Xaml_Behaviors_Wpf>
+    <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\netry\.nuget\packages\materialdesignthemes\4.9.0</PkgMaterialDesignThemes>
+  </PropertyGroup>
 </Project>

@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "2B6EykqKbpoNlY3vk7V1XEmSvTUubIBTcF5LeFDk1NOKZAmJI2WOVRudCx5lf/oYnSn/SaEFJ3XeWpjkdJ2w8g==",
+  "dgSpecHash": "7O8vn2Sppl59KN8mZCcKo7j0nlYTonfth5yhrA6Al+Ypkv/DmxVrplJviB3P2k37z3m6kgPepyYMPJIDoxda1g==",
   "success": true,
   "projectFilePath": "D:\\GraduateWork\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\netry\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\netry\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\netry\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\netry\\.nuget\\packages\\showmethexaml\\2.0.0\\showmethexaml.2.0.0.nupkg.sha512",
+    "C:\\Users\\netry\\.nuget\\packages\\showmethexaml.msbuild\\2.0.0\\showmethexaml.msbuild.2.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

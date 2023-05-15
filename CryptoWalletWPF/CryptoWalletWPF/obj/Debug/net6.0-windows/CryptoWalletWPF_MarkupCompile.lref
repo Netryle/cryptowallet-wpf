@@ -3,6 +3,9 @@
 FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\AccountCreatingWindow.xaml;;
 FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\CreateAccountWindow.xaml;;
 FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\HDWalletCreatingWindow.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromFileWindow.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromHDWalletWindow.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromPrivateKeyWindow.xaml;;
 FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountWindow.xaml;;
 FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoginWindow.xaml;;
 FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\MainWindow.xaml;;

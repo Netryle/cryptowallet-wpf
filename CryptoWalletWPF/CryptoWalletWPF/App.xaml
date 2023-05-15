@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:CryptoWalletWPF"
              StartupUri="/Views/HDWalletCreatingWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>

@@ -30,3 +30,14 @@ D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\HDWalletCreatingWindow.g.cs
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\AccountCreatingWindow.baml
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\HDWalletCreatingWindow.baml
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\bin\Debug\net6.0-windows\ShowMeTheXAML.dll
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\LoadAccountFromFileWindow.g.cs
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\LoadAccountFromHDWalletWindow.g.cs
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\LoadAccountFromPrivateKeyWindow.g.cs
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\LoadAccountFromFileWindow.baml
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\LoadAccountFromHDWalletWindow.baml
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\Views\LoadAccountFromPrivateKeyWindow.baml
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\CryptoWalletWPF.csproj.CopyComplete

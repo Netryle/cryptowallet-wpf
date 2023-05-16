@@ -5,13 +5,13 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using CryptoWalletWPF.Utility;
 
 namespace CryptoWalletWPF.ViewModels
 {
     class LoginViewModel : INotifyPropertyChanged
     {
-        private string selectedNetwork;
-
         public List<string> NetworkList { get; set; } = new List<string>()
         {
             "Local",
@@ -28,11 +28,20 @@ namespace CryptoWalletWPF.ViewModels
                 selectedNetwork = value;
                 OnPropertyChanged("SelectedNetwork");
             }
-        } 
+        }
 
+        public ICommand loadAccountButtonCommand { get; private set; }
+        public ICommand createAccountButtonCommand { get; private set; }
+
+        private string? selectedNetwork;
+
+        
+        //Consturctor
         public LoginViewModel()
         {
             selectedNetwork = NetworkList.FirstOrDefault();
+            loadAccountButtonCommand = new RelayCommand(executeLoadAccountButtonCommand);
+            createAccountButtonCommand = new RelayCommand(executeCreateAccountButtonCommand);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -42,6 +51,19 @@ namespace CryptoWalletWPF.ViewModels
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
             }
+        }
+
+        private void executeLoadAccountButtonCommand()
+        {
+            var loadAccountWindow = new LoadAccountWindow();
+
+            loadAccountWindow.Show();
+            
+        }
+
+        private void executeCreateAccountButtonCommand()
+        {
+
         }
     }
 }

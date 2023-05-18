@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CryptoWalletWPF.NewViews;
+using CryptoWalletWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +26,13 @@ namespace CryptoWalletWPF.Views
     {
         Main,
         Login,
+        LoadAccount,
+        LoadAccountFromPrivateKey,
+        LoadAccountFromFile,
+        LoadAccountFromHDWallet,
+        CreateAccount,
+        AccountCreating,
+        HDWalletCreating,
     }
 
     /// <summary>
@@ -34,11 +43,100 @@ namespace CryptoWalletWPF.Views
         public MainWindow()
         {
             InitializeComponent();
-        }
+            Loaded += MainWindow_Loaded;
+        }        
 
         public void LoadView(ViewType typeView)
         {
+            switch (typeView)
+            {
+                case ViewType.Main:
+                    var mainView = new MainUC();
+                    var mainViewModel = new MainViewModel(this);
 
+                    mainView.DataContext = mainViewModel;
+                    OutputView.Content = mainView;
+
+                    break;
+
+                case ViewType.Login:
+                    var loginView = new LoginUC();
+                    var loginViewModel = new LoginViewModel(this);
+
+                    loginView.DataContext = loginViewModel;
+                    OutputView.Content = loginView;
+
+                    break;
+
+                case ViewType.LoadAccount:
+                    var loadAccountView = new LoadAccountUC();
+                    var loadAccountViewModel = new LoadAccountViewModel(this);
+
+                    loadAccountView.DataContext = loadAccountViewModel;
+                    OutputView.Content = loadAccountView;
+
+                    break;
+
+                case ViewType.LoadAccountFromPrivateKey:
+                    var loadAccountFromPrivateKeyView = new LoadAccountFromPrivateKeyUC();
+                    var loadAccountFromPrivateKeyViewModel = new LoadAccountFromPrivateKeyViewModel(this);
+
+                    loadAccountFromPrivateKeyView.DataContext = loadAccountFromPrivateKeyViewModel;
+                    OutputView.Content = loadAccountFromPrivateKeyView;
+
+                    break;
+
+                case ViewType.LoadAccountFromFile:
+                    var loadAccountFromFileView = new LoadAccountFromFileUC();
+                    var loadAccountFromFileViewModel = new LoadAccountFromFileViewModel(this);
+
+                    loadAccountFromFileView.DataContext = loadAccountFromFileViewModel;
+                    OutputView.Content = loadAccountFromFileView;
+
+                    break;
+
+                case ViewType.LoadAccountFromHDWallet:
+                    var loadAccountFromHDWalletView = new LoadAccountFromHDWalletUC();
+                    var loadAccountFromHDWalletViewModel = new LoadAccountFromHDWalletViewModel(this);
+
+                    loadAccountFromHDWalletView.DataContext = loadAccountFromHDWalletViewModel;
+                    OutputView.Content = loadAccountFromHDWalletView;
+
+                    break;
+
+                case ViewType.CreateAccount:
+                    var createAccountView = new CreateAccountUC();
+                    var createAccountViewModel = new CreateAccountViewModel(this);
+
+                    createAccountView.DataContext = createAccountViewModel;
+                    OutputView.Content = createAccountView;
+
+                    break;
+
+                case ViewType.AccountCreating:
+                    var accountCreatingView = new AccountCreatingUC();
+                    var accountCreatingViewModel = new AccountCreatingViewModel(this);
+
+                    accountCreatingView.DataContext = accountCreatingViewModel;
+                    OutputView.Content = accountCreatingView;
+
+                    break;
+
+                case ViewType.HDWalletCreating:
+                    var locHDWalletCreatingView = new HDWalletCreatingUC();
+                    var locHDWalletCreatingViewModel = new HDWalletCreatingViewModel(this);
+
+                    locHDWalletCreatingView.DataContext = locHDWalletCreatingViewModel;
+                    OutputView.Content = locHDWalletCreatingView;
+
+                    break;
+
+            }
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadView(ViewType.Login);
         }
     }
 }

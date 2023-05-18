@@ -1,12 +1,13 @@
 ﻿
 
-FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\AccountCreatingWindow.xaml;;
-FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\CreateAccountWindow.xaml;;
-FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\HDWalletCreatingWindow.xaml;;
-FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromFileWindow.xaml;;
-FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromHDWalletWindow.xaml;;
-FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromPrivateKeyWindow.xaml;;
-FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountWindow.xaml;;
-FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoginWindow.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\AccountCreatingUC.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\CreateAccountUC.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\HDWalletCreatingUC.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromFileUC.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromHDWalletUC.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountFromPrivateKeyUC.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoadAccountUC.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\LoginUC.xaml;;
+FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\MainUC.xaml;;
 FD:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Views\MainWindow.xaml;;
 

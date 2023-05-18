@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptoWalletWPF.NewViews"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="400">
+              d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <Label Content="Load from" HorizontalAlignment="Center" Margin="0,97,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="privateKeyButton" Content="Private key" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top" Width="130" Height="35"/>
-        <Button x:Name="accountFileButton" Content="Account file" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="35" Margin="0,197,0,0"/>
-        <Button x:Name="walletHDButton" Content="HD Wallet" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="35" Margin="0,237,0,0"/>
+        <Label Content="Load from" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Command="{Binding privateKeyButtonCommand}" x:Name="privateKeyButton" Content="Private key" HorizontalAlignment="Center" Margin="0,165,0,0" VerticalAlignment="Top" Width="130" Height="35"/>
+        <Button Command="{Binding accountFileButtonCommand}" x:Name="accountFileButton" Content="Account file" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="35" Margin="0,205,0,0"/>
+        <Button Command="{Binding hdWalletButtonCommand}" x:Name="walletHDButton" Content="HD Wallet" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="35" Margin="0,245,0,0"/>
 
     </Grid>
 </UserControl>

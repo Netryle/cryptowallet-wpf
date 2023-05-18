@@ -5,18 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptoWalletWPF.NewViews"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="400">
+              d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <Label Content="Your seed phrase" HorizontalAlignment="Left" Margin="114,43,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="(Save it for future login and recovery)" HorizontalAlignment="Left" Margin="91,70,0,0" VerticalAlignment="Top" Height="26"/>
-        <TextBox x:Name="seedPhraseTextBox" HorizontalAlignment="Left" Margin="91,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="101" TextAlignment="Center" IsReadOnly="True"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="91,204,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
-        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="91,252,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="100,232,0,0" VerticalAlignment="Top" Width="197"/>
-        <PasswordBox x:Name="confirmPasswordBox" HorizontalAlignment="Left" Margin="100,280,0,0" VerticalAlignment="Top" Width="197"/>
-        <Button Content="Create" HorizontalAlignment="Left" Margin="209,318,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="114,318,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button x:Name="copyButton" Content="C" HorizontalAlignment="Left" Margin="302,101,0,0" VerticalAlignment="Top" Height="25" Width="26"/>
+        <Label Content="Your seed phrase" HorizontalAlignment="Left" Margin="181,48,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="(Save it for future login and recovery)" HorizontalAlignment="Left" Margin="158,75,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBox x:Name="seedPhraseTextBox" HorizontalAlignment="Left" Margin="158,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="101" TextAlignment="Center" IsReadOnly="True"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="158,209,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
+        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="158,257,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="167,237,0,0" VerticalAlignment="Top" Width="197"/>
+        <PasswordBox x:Name="confirmPasswordBox" HorizontalAlignment="Left" Margin="167,285,0,0" VerticalAlignment="Top" Width="197"/>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="276,323,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="181,323,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button x:Name="copyButton" Content="C" HorizontalAlignment="Left" Margin="369,106,0,0" VerticalAlignment="Top" Height="25" Width="26"/>
 
     </Grid>
 </UserControl>

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CryptoWalletWPF.Utility;
+using CryptoWalletWPF.Views;
 
 namespace CryptoWalletWPF.ViewModels
 {
@@ -34,11 +35,13 @@ namespace CryptoWalletWPF.ViewModels
         public ICommand createAccountButtonCommand { get; private set; }
 
         private string? selectedNetwork;
-
+        private IViewer localViewer;
         
         //Consturctor
-        public LoginViewModel()
+        public LoginViewModel(IViewer viewer)
         {
+            localViewer = viewer;
+
             selectedNetwork = NetworkList.FirstOrDefault();
             loadAccountButtonCommand = new RelayCommand(executeLoadAccountButtonCommand);
             createAccountButtonCommand = new RelayCommand(executeCreateAccountButtonCommand);
@@ -55,15 +58,12 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeLoadAccountButtonCommand()
         {
-            var loadAccountWindow = new LoadAccountWindow();
-
-            loadAccountWindow.Show();
-            
+            localViewer.LoadView(ViewType.LoadAccount);
         }
 
         private void executeCreateAccountButtonCommand()
         {
-
+            localViewer.LoadView(ViewType.CreateAccount);
         }
     }
 }

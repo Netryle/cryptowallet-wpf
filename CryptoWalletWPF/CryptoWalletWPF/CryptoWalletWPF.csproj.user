@@ -7,54 +7,63 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AccountCreatingWindow.xaml.cs">
+    <Compile Update="Views\AccountCreatingUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\CreateAccountWindow.xaml.cs">
+    <Compile Update="Views\CreateAccountUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\HDWalletCreatingWindow.xaml.cs">
+    <Compile Update="Views\HDWalletCreatingUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\LoadAccountFromFileWindow.xaml.cs">
+    <Compile Update="Views\LoadAccountFromFileUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\LoadAccountFromHDWalletWindow.xaml.cs">
+    <Compile Update="Views\LoadAccountFromHDWalletUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\LoadAccountFromPrivateKeyWindow.xaml.cs">
+    <Compile Update="Views\LoadAccountFromPrivateKeyUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\LoadAccountWindow.xaml.cs">
+    <Compile Update="Views\LoadAccountUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\LoginWindow.xaml.cs">
+    <Compile Update="Views\LoginUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MainUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\AccountCreatingWindow.xaml">
+    <Page Update="Views\AccountCreatingUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\CreateAccountWindow.xaml">
+    <Page Update="Views\CreateAccountUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\HDWalletCreatingWindow.xaml">
+    <Page Update="Views\HDWalletCreatingUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\LoadAccountFromFileWindow.xaml">
+    <Page Update="Views\LoadAccountFromFileUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\LoadAccountFromHDWalletWindow.xaml">
+    <Page Update="Views\LoadAccountFromHDWalletUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\LoadAccountFromPrivateKeyWindow.xaml">
+    <Page Update="Views\LoadAccountFromPrivateKeyUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\LoadAccountWindow.xaml">
+    <Page Update="Views\LoadAccountUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\LoginWindow.xaml">
+    <Page Update="Views\LoginUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainUC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">

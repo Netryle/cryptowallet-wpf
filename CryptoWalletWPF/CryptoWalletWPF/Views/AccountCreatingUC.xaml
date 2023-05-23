@@ -8,7 +8,7 @@
              d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
         <Label Content="Your private key:" HorizontalAlignment="Center" Margin="0,111,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox
+        <TextBox Text="{Binding PrivateKey}"
             x:Name="privateKeyTextBox" Height="20" Margin="20,164,60,216" Width="320" IsReadOnly="True"
             />
         <Button Command="{Binding copyButtonCommand}"  x:Name="copyButton" Content="C" HorizontalAlignment="Left" Margin="430,162,0,0" VerticalAlignment="Top" Height="24" Width="26"/>

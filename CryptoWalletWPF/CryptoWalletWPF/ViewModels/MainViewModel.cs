@@ -1,4 +1,5 @@
-﻿using CryptoWalletWPF.Utility;
+﻿using CryptoWalletWPF.Models;
+using CryptoWalletWPF.Utility;
 using CryptoWalletWPF.Views;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,61 @@ namespace CryptoWalletWPF.ViewModels
 {
     class MainViewModel : INotifyPropertyChanged
     {
-        private IViewer localViewer;
+        private IViewer _localViewer;
+        private SharedDataModel _sharedDataModel;
+        private MainModel _mainModel;
 
+        private string _networkName;
+        private string _accountAddress;
+        private string _accountBalance;
+
+        public string NetworkName
+        {
+            get { return _networkName; }
+            set
+            {
+                _networkName = "Network: " + value;
+                OnPropertyChanged(nameof(NetworkName));
+            }
+        }
+
+        public string AccountAddress
+        {
+            get { return _accountAddress; }
+            set
+            {
+                _accountAddress = value;
+                OnPropertyChanged(nameof(AccountAddress));
+            }
+        }
+
+        public string AccountBalance
+        {
+            get { return _accountBalance; }
+            set
+            {
+                _accountBalance = value + " ETH";
+                OnPropertyChanged(nameof(AccountBalance));
+            }
+        }
+
+        public ICommand sendTransactionButtonCommand { get; set; }
+        public ICommand sendTokenButtonCommand { get; set; }
+        public ICommand transactionsButtonCommand { get; set; }
         public ICommand logOutButtonCommand { get; private set; }
 
-        public MainViewModel(IViewer viewer)
+        public MainViewModel(IViewer viewer, SharedDataModel sharedDataModel)
         {
-            localViewer = viewer;
+            _localViewer = viewer;
+            _sharedDataModel = sharedDataModel;
+            _mainModel = new MainModel(
+                               _sharedDataModel.PrivateKey,
+                               _sharedDataModel.RpcUrl
+                               );
+
+            NetworkName = _sharedDataModel.NetworkName;
+            AccountAddress = _mainModel.GetAccountAddress;
+            AccountBalance = _mainModel.GetAccountBalanceInEth();
 
             logOutButtonCommand = new RelayCommand(executeLogOutButtonCommand);
         }
@@ -35,7 +84,7 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeLogOutButtonCommand()
         {
-            localViewer.LoadView(ViewType.Login);
+            _localViewer.LoadView(ViewType.Login);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CryptoWalletWPF.Models;
 using CryptoWalletWPF.Utility;
 using CryptoWalletWPF.Views;
 
@@ -13,6 +14,9 @@ namespace CryptoWalletWPF.ViewModels
 {
     class LoginViewModel : INotifyPropertyChanged
     {
+        private string _selectedNetwork;
+        private IViewer _localViewer;
+        private SharedDataModel _sharedDataModel;
         public List<string> NetworkList { get; set; } = new List<string>()
         {
             "Local",
@@ -23,10 +27,10 @@ namespace CryptoWalletWPF.ViewModels
 
         public string SelectedNetwork
         {
-            get { return selectedNetwork; }
+            get { return _selectedNetwork; }
             set
             {
-                selectedNetwork = value;
+                _selectedNetwork = value;
                 OnPropertyChanged("SelectedNetwork");
             }
         }
@@ -34,17 +38,29 @@ namespace CryptoWalletWPF.ViewModels
         public ICommand loadAccountButtonCommand { get; private set; }
         public ICommand createAccountButtonCommand { get; private set; }
 
-        private string? selectedNetwork;
-        private IViewer localViewer;
         
-        //Consturctor
-        public LoginViewModel(IViewer viewer)
-        {
-            localViewer = viewer;
 
-            selectedNetwork = NetworkList.FirstOrDefault();
+        //Consturctor
+        public LoginViewModel(IViewer viewer, SharedDataModel sharedDataModel)
+        {
+            _localViewer = viewer;
+            _sharedDataModel = sharedDataModel;
+
+            _selectedNetwork = NetworkList.FirstOrDefault();
             loadAccountButtonCommand = new RelayCommand(executeLoadAccountButtonCommand);
             createAccountButtonCommand = new RelayCommand(executeCreateAccountButtonCommand);
+        }        
+
+        private void executeLoadAccountButtonCommand()
+        {
+            _localViewer.LoadView(ViewType.LoadAccount);
+            _sharedDataModel.NetworkName = _selectedNetwork;
+        }
+
+        private void executeCreateAccountButtonCommand()
+        {
+            _localViewer.LoadView(ViewType.CreateAccount);
+            _sharedDataModel.NetworkName = _selectedNetwork;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -54,16 +70,6 @@ namespace CryptoWalletWPF.ViewModels
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
             }
-        }
-
-        private void executeLoadAccountButtonCommand()
-        {
-            localViewer.LoadView(ViewType.LoadAccount);
-        }
-
-        private void executeCreateAccountButtonCommand()
-        {
-            localViewer.LoadView(ViewType.CreateAccount);
         }
     }
 }

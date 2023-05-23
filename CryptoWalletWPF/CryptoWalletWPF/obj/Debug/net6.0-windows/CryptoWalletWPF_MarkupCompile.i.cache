@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\App.xaml
 10642805911
 
-26-1023017870
-198-1072331560
+30-27235022
+221-1438946589
 Views\AccountCreatingUC.xaml;Views\CreateAccountUC.xaml;Views\HDWalletCreatingUC.xaml;Views\LoadAccountFromFileUC.xaml;Views\LoadAccountFromHDWalletUC.xaml;Views\LoadAccountFromPrivateKeyUC.xaml;Views\LoadAccountUC.xaml;Views\LoginUC.xaml;Views\MainUC.xaml;Views\MainWindow.xaml;
 
-False
+True
 

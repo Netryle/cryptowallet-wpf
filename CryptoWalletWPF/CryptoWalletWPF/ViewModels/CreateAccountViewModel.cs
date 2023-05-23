@@ -17,6 +17,8 @@ namespace CryptoWalletWPF.ViewModels
 
         public ICommand accountButtonCommand { get; private set; }
         public ICommand hdWalletButtonCommand { get; private set; }
+        public ICommand backButtonCommand { get; private set; }
+
 
         public CreateAccountViewModel(IViewer viewer)
         {
@@ -24,6 +26,7 @@ namespace CryptoWalletWPF.ViewModels
 
             accountButtonCommand = new RelayCommand(executeAccountButtonCommand);
             hdWalletButtonCommand = new RelayCommand(executeHDWalletButtonCommand);
+            backButtonCommand = new RelayCommand(executeBackButtonCommand);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -44,6 +47,11 @@ namespace CryptoWalletWPF.ViewModels
         {
             localViewer.LoadView(ViewType.HDWalletCreating);
 
+        }
+
+        private void executeBackButtonCommand()
+        {
+            localViewer.LoadView(ViewType.Login);
         }
     }
 }

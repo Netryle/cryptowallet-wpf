@@ -10,6 +10,7 @@
         <Label Content="Create" HorizontalAlignment="Center" Margin="0,114,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button Command="{Binding accountButtonCommand}" x:Name="accountButton" Content="Account" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="35"/>
         <Button Command="{Binding hdWalletButtonCommand}" x:Name="walletHDButton" Content="HD Wallet" HorizontalAlignment="Center" Margin="0,223,0,0" VerticalAlignment="Top" Width="130" Height="35"/>
+        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Left" Margin="49,330,0,0" VerticalAlignment="Top" Width="130" Height="35"/>
 
     </Grid>
 </UserControl>

@@ -24,5 +24,17 @@ namespace CryptoWalletWPF.NewViews
         {
             InitializeComponent();
         }
+
+        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
+        }
+
+        private void confirmPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).ConfirmPassword = ((PasswordBox)sender).Password; }
+        }
     }
 }

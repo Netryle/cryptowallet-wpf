@@ -1,4 +1,5 @@
-﻿using CryptoWalletWPF.Utility;
+﻿using CryptoWalletWPF.Models;
+using CryptoWalletWPF.Utility;
 using CryptoWalletWPF.Views;
 using System;
 using System.Collections.Generic;
@@ -13,15 +14,26 @@ namespace CryptoWalletWPF.ViewModels
 {
     internal class LoadAccountFromPrivateKeyViewModel : INotifyPropertyChanged
     {
-        private IViewer localViewer;
-
+        private IViewer _localViewer;
+        private SharedDataModel _sharedDataModel;
+        private string _privateKey;
+        public string PrivateKey
+        {
+            get { return _privateKey; }
+            set 
+            {
+                _privateKey = value;
+                OnPropertyChanged("PrivateKey");
+            }
+        }
         public ICommand loadButtonCommand { get; private set; }
         public ICommand backButtonCommand { get; private set; }
 
 
-        public LoadAccountFromPrivateKeyViewModel(IViewer viewer)
+        public LoadAccountFromPrivateKeyViewModel(IViewer viewer, SharedDataModel sharedDataModel)
         {
-            localViewer = viewer;
+            _localViewer = viewer;
+            _sharedDataModel = sharedDataModel;
 
             loadButtonCommand = new RelayCommand(executeLoadButtonCommand);
             backButtonCommand = new RelayCommand(executeBackButtonCommand);
@@ -39,12 +51,14 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeLoadButtonCommand()
         {
-            localViewer.LoadView(ViewType.Main);
+            _localViewer.LoadView(ViewType.Main);
+            _sharedDataModel.PrivateKey = PrivateKey;
+            _sharedDataModel.LoadType = LoadingType.PrivateKey;
         }
 
         private void executeBackButtonCommand()
         {
-            localViewer.LoadView(ViewType.LoadAccount);
+            _localViewer.LoadView(ViewType.LoadAccount);
 
         }
 

@@ -1,4 +1,5 @@
-﻿using CryptoWalletWPF.Utility;
+﻿using CryptoWalletWPF.Models;
+using CryptoWalletWPF.Utility;
 using CryptoWalletWPF.Views;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,18 @@ namespace CryptoWalletWPF.ViewModels
     internal class AccountCreatingViewModel : INotifyPropertyChanged
     {
         private IViewer localViewer;
+        private SharedDataModel _sharedDataModel;
+        private string _privateKey;
+
+        public string PrivateKey
+        {
+            get { return _privateKey; }
+            set
+            {
+                _privateKey = value;
+                OnPropertyChanged(nameof(PrivateKey));
+            }
+        }
 
         public ICommand createButtonCommand { get; private set; }
         public ICommand backButtonCommand { get; private set; }
@@ -21,9 +34,12 @@ namespace CryptoWalletWPF.ViewModels
 
 
 
-        public AccountCreatingViewModel(IViewer viewer)
+        public AccountCreatingViewModel(IViewer viewer, SharedDataModel sharedDataModel)
         {
             localViewer = viewer;
+            _sharedDataModel = sharedDataModel;
+
+            PrivateKey = AccountCreatorModel.GeneratePrivateKey();
 
             createButtonCommand = new RelayCommand(executeCreateButtonCommand);
             backButtonCommand = new RelayCommand(executeBackButtonCommand);
@@ -41,6 +57,7 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeCreateButtonCommand()
         {
+            _sharedDataModel.PrivateKey = PrivateKey;
             localViewer.LoadView(ViewType.Main);
         }
 

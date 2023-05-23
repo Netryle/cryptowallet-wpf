@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Autofac;
+using CryptoWalletWPF.Models;
+using CryptoWalletWPF.ViewModels;
+using CryptoWalletWPF.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +17,18 @@ namespace CryptoWalletWPF
     /// </summary>
     public partial class App : Application
     {
+    //    protected override void OnStartup(StartupEventArgs e)
+    //    {
+    //        base.OnStartup(e);
+
+    //        var containerBuilder = new ContainerBuilder();
+    //        containerBuilder.RegisterType<SharedDataModel>().SingleInstance();
+    //        containerBuilder.RegisterType<LoginViewModel>();
+    //        containerBuilder.RegisterType<CreateAccountViewModel>();
+    //        var container = containerBuilder.Build();
+
+    //        var mainWindow = container.Resolve<MainWindow>();
+    //        mainWindow.Show();
+    //    }
     }
 }

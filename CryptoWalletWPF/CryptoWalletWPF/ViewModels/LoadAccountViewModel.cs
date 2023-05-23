@@ -1,4 +1,5 @@
-﻿using CryptoWalletWPF.Utility;
+﻿using CryptoWalletWPF.Models;
+using CryptoWalletWPF.Utility;
 using CryptoWalletWPF.Views;
 using System;
 using System.Collections.Generic;
@@ -14,19 +15,44 @@ namespace CryptoWalletWPF.ViewModels
     class LoadAccountViewModel : INotifyPropertyChanged
     {
         
-        private IViewer localViewer;
+        private IViewer _localViewer;
+        private SharedDataModel _sharedDataModel;
 
         public ICommand privateKeyButtonCommand { get; private set; }
         public ICommand accountFileButtonCommand { get; private set; }
         public ICommand hdWalletButtonCommand { get; private set; }
+        public ICommand backButtonCommand { get; private set; }
 
-        public LoadAccountViewModel(IViewer viewer)
+        public LoadAccountViewModel(IViewer viewer, SharedDataModel sharedDataModel)
         {
-            localViewer = viewer;
+            _localViewer = viewer;
+            _sharedDataModel = sharedDataModel;
 
             privateKeyButtonCommand = new RelayCommand(executePrivateKeyButtonCommand);
             accountFileButtonCommand = new RelayCommand(executeAccountFileButtonCommand);
             hdWalletButtonCommand = new RelayCommand(executeHdWalletButtonCommand);
+            backButtonCommand = new RelayCommand(executeBackButtonCommand);
+
+        }        
+
+        private void executePrivateKeyButtonCommand()
+        {
+            _localViewer.LoadView(ViewType.LoadAccountFromPrivateKey);
+        }
+
+        private void executeAccountFileButtonCommand() 
+        {
+            _localViewer.LoadView(ViewType.LoadAccountFromFile);
+        }
+
+        private void executeHdWalletButtonCommand() 
+        {
+            _localViewer.LoadView(ViewType.LoadAccountFromHDWallet);
+        }
+
+        private void executeBackButtonCommand()
+        {
+            _localViewer.LoadView(ViewType.Login);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -36,21 +62,6 @@ namespace CryptoWalletWPF.ViewModels
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
             }
-        }
-
-        private void executePrivateKeyButtonCommand()
-        {
-            localViewer.LoadView(ViewType.LoadAccountFromPrivateKey);
-        }
-
-        private void executeAccountFileButtonCommand() 
-        {
-            localViewer.LoadView(ViewType.LoadAccountFromFile);
-        }
-
-        private void executeHdWalletButtonCommand() 
-        {
-            localViewer.LoadView(ViewType.LoadAccountFromHDWallet);
         }
     }
 }

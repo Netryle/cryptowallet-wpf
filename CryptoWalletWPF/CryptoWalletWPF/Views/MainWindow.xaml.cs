@@ -1,4 +1,5 @@
-﻿using CryptoWalletWPF.NewViews;
+﻿using CryptoWalletWPF.Models;
+using CryptoWalletWPF.NewViews;
 using CryptoWalletWPF.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -40,10 +41,12 @@ namespace CryptoWalletWPF.Views
     /// </summary>
     public partial class MainWindow : Window, IViewer
     {
+        private SharedDataModel _sharedDataModel;
         public MainWindow()
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+            _sharedDataModel = new SharedDataModel();
         }        
 
         public void LoadView(ViewType typeView)
@@ -52,7 +55,7 @@ namespace CryptoWalletWPF.Views
             {
                 case ViewType.Main:
                     var mainView = new MainUC();
-                    var mainViewModel = new MainViewModel(this);
+                    var mainViewModel = new MainViewModel(this, _sharedDataModel);
 
                     mainView.DataContext = mainViewModel;
                     OutputView.Content = mainView;
@@ -61,7 +64,7 @@ namespace CryptoWalletWPF.Views
 
                 case ViewType.Login:
                     var loginView = new LoginUC();
-                    var loginViewModel = new LoginViewModel(this);
+                    var loginViewModel = new LoginViewModel(this, _sharedDataModel);
 
                     loginView.DataContext = loginViewModel;
                     OutputView.Content = loginView;
@@ -70,7 +73,7 @@ namespace CryptoWalletWPF.Views
 
                 case ViewType.LoadAccount:
                     var loadAccountView = new LoadAccountUC();
-                    var loadAccountViewModel = new LoadAccountViewModel(this);
+                    var loadAccountViewModel = new LoadAccountViewModel(this, _sharedDataModel);
 
                     loadAccountView.DataContext = loadAccountViewModel;
                     OutputView.Content = loadAccountView;
@@ -79,7 +82,7 @@ namespace CryptoWalletWPF.Views
 
                 case ViewType.LoadAccountFromPrivateKey:
                     var loadAccountFromPrivateKeyView = new LoadAccountFromPrivateKeyUC();
-                    var loadAccountFromPrivateKeyViewModel = new LoadAccountFromPrivateKeyViewModel(this);
+                    var loadAccountFromPrivateKeyViewModel = new LoadAccountFromPrivateKeyViewModel(this, _sharedDataModel);
 
                     loadAccountFromPrivateKeyView.DataContext = loadAccountFromPrivateKeyViewModel;
                     OutputView.Content = loadAccountFromPrivateKeyView;
@@ -115,7 +118,7 @@ namespace CryptoWalletWPF.Views
 
                 case ViewType.AccountCreating:
                     var accountCreatingView = new AccountCreatingUC();
-                    var accountCreatingViewModel = new AccountCreatingViewModel(this);
+                    var accountCreatingViewModel = new AccountCreatingViewModel(this, _sharedDataModel);
 
                     accountCreatingView.DataContext = accountCreatingViewModel;
                     OutputView.Content = accountCreatingView;
@@ -123,11 +126,11 @@ namespace CryptoWalletWPF.Views
                     break;
 
                 case ViewType.HDWalletCreating:
-                    var locHDWalletCreatingView = new HDWalletCreatingUC();
-                    var locHDWalletCreatingViewModel = new HDWalletCreatingViewModel(this);
+                    var hdWalletCreatingView = new HDWalletCreatingUC();
+                    var hdWalletCreatingViewModel = new HDWalletCreatingViewModel(this, _sharedDataModel);
 
-                    locHDWalletCreatingView.DataContext = locHDWalletCreatingViewModel;
-                    OutputView.Content = locHDWalletCreatingView;
+                    hdWalletCreatingView.DataContext = hdWalletCreatingViewModel;
+                    OutputView.Content = hdWalletCreatingView;
 
                     break;
 

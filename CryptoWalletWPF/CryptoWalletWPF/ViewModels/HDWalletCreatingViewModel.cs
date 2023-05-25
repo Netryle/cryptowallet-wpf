@@ -16,7 +16,7 @@ namespace CryptoWalletWPF.ViewModels
 {
     internal class HDWalletCreatingViewModel : INotifyPropertyChanged
     {
-        private IViewer localViewer;
+        private IViewer _localViewer;
         private SharedDataModel _sharedDataModel;
         private string _password;
         private string _confirmPassword;
@@ -29,7 +29,7 @@ namespace CryptoWalletWPF.ViewModels
             set
             {
                 _password = value;
-                OnPropertyChanged("Password");
+                OnPropertyChanged(nameof(Password));
             }
         }
         public string ConfirmPassword
@@ -38,7 +38,7 @@ namespace CryptoWalletWPF.ViewModels
             set
             {
                 _confirmPassword = value;
-                OnPropertyChanged("ConfirmPassword");
+                OnPropertyChanged(nameof(ConfirmPassword));
             }
         }
         public string MnemonicString 
@@ -47,7 +47,7 @@ namespace CryptoWalletWPF.ViewModels
             set
             {
                 _mnemonicString = value;
-                OnPropertyChanged("MnemonicString");
+                OnPropertyChanged(nameof(MnemonicString));
             }
         }
 
@@ -57,7 +57,7 @@ namespace CryptoWalletWPF.ViewModels
 
         public HDWalletCreatingViewModel(IViewer viewer, SharedDataModel sharedDataModel)
         {
-            localViewer = viewer;
+            _localViewer = viewer;
             _sharedDataModel = sharedDataModel;
 
             _mnemonic = AccountCreatorModel.GenerateMnemonic();
@@ -80,17 +80,17 @@ namespace CryptoWalletWPF.ViewModels
         private void executeCreateButtonCommand()
         {
             if (Password == ConfirmPassword)
-            {
-                localViewer.LoadViewAsync(ViewType.Main);
-
+            {                
                 _sharedDataModel.Mnemonic = _mnemonic;
                 _sharedDataModel.Password = _password;
+
+                _localViewer.LoadViewAsync(ViewType.Main);
             }
         }
 
         private void executeBackButtonCommand()
         {
-            localViewer.LoadViewAsync(ViewType.CreateAccount);
+            _localViewer.LoadViewAsync(ViewType.CreateAccount);
         }
 
         private void executeCopyButtonCommand()

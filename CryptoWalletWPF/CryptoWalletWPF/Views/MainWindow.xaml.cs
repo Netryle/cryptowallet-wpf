@@ -100,7 +100,7 @@ namespace CryptoWalletWPF.Views
 
                 case ViewType.LoadAccountFromHDWallet:
                     var loadAccountFromHDWalletView = new LoadAccountFromHDWalletUC();
-                    var loadAccountFromHDWalletViewModel = new LoadAccountFromHDWalletViewModel(this);
+                    var loadAccountFromHDWalletViewModel = new LoadAccountFromHDWalletViewModel(this, _sharedDataModel);
 
                     loadAccountFromHDWalletView.DataContext = loadAccountFromHDWalletViewModel;
                     OutputView.Content = loadAccountFromHDWalletView;

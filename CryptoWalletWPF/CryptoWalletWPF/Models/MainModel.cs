@@ -31,8 +31,6 @@ namespace CryptoWalletWPF.Models
         {
             _account = new Account(privateKey);
             _web3 = new Web3(_account, rpc);
-
-            _balance = "0";
         }
 
         public async Task GetAccountBalanceInEth()

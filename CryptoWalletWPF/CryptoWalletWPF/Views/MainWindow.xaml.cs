@@ -20,7 +20,7 @@ namespace CryptoWalletWPF.Views
 
     public interface IViewer
     {
-        void LoadView(ViewType typeView);
+        void LoadViewAsync(ViewType typeView);
     }
 
     public enum ViewType
@@ -49,13 +49,13 @@ namespace CryptoWalletWPF.Views
             _sharedDataModel = new SharedDataModel();
         }        
 
-        public void LoadView(ViewType typeView)
+        public async void LoadViewAsync(ViewType typeView)
         {
             switch (typeView)
             {
                 case ViewType.Main:
                     var mainView = new MainUC();
-                    var mainViewModel = new MainViewModel(this, _sharedDataModel);
+                    var mainViewModel = await MainViewModel.CreateAsync(this, _sharedDataModel);//new MainViewModel(this, _sharedDataModel);
 
                     mainView.DataContext = mainViewModel;
                     OutputView.Content = mainView;
@@ -139,7 +139,7 @@ namespace CryptoWalletWPF.Views
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadView(ViewType.Login);
+            LoadViewAsync(ViewType.Login);
         }
     }
 }

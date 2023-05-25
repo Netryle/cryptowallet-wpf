@@ -40,18 +40,18 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeAccountButtonCommand()
         {
-            localViewer.LoadView(ViewType.AccountCreating);
+            localViewer.LoadViewAsync(ViewType.AccountCreating);
         }
 
         private void executeHDWalletButtonCommand()
         {
-            localViewer.LoadView(ViewType.HDWalletCreating);
+            localViewer.LoadViewAsync(ViewType.HDWalletCreating);
 
         }
 
         private void executeBackButtonCommand()
         {
-            localViewer.LoadView(ViewType.Login);
+            localViewer.LoadViewAsync(ViewType.Login);
         }
     }
 }

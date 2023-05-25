@@ -12,21 +12,34 @@ namespace CryptoWalletWPF.Models
     {
         private Web3 _web3;
         private Account _account;
+        private string _balance;
 
-        public string GetAccountAddress => _account.Address;        
+        public string GetAccountAddress => _account.Address;
+        public string GetBalance
+        {
+            get 
+            {
+                return _balance;                
+            }
+            private set 
+            {
+                _balance = value;
+            }
+        }
 
         public MainModel(string privateKey, string rpc)
         {
             _account = new Account(privateKey);
-            _web3 = new Web3(_account, rpc);            
+            _web3 = new Web3(_account, rpc);
+
+            _balance = "0";
         }
 
-        public async Task<string> GetAccountBalanceInEth()
+        public async Task GetAccountBalanceInEth()
         {
             var balance = await _web3.Eth.GetBalance.SendRequestAsync(GetAccountAddress);
-            decimal etherBalance = Web3.Convert.FromWei(balance.Value);      
-            
-            return etherBalance.ToString();
+            decimal etherBalance = Web3.Convert.FromWei(balance.Value);
+            _balance = etherBalance.ToString();           
         }
 
         public void SendTransaction()

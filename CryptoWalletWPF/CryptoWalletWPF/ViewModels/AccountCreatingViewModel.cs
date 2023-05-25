@@ -58,12 +58,12 @@ namespace CryptoWalletWPF.ViewModels
         private void executeCreateButtonCommand()
         {
             _sharedDataModel.PrivateKey = PrivateKey;
-            localViewer.LoadView(ViewType.Main);
+            localViewer.LoadViewAsync(ViewType.Main);
         }
 
         private void executeBackButtonCommand() 
         {
-            localViewer.LoadView(ViewType.CreateAccount);
+            localViewer.LoadViewAsync(ViewType.CreateAccount);
         }
 
         private void executeCopyButtonCommand() 

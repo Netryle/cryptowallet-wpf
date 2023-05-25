@@ -37,22 +37,22 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executePrivateKeyButtonCommand()
         {
-            _localViewer.LoadView(ViewType.LoadAccountFromPrivateKey);
+            _localViewer.LoadViewAsync(ViewType.LoadAccountFromPrivateKey);
         }
 
         private void executeAccountFileButtonCommand() 
         {
-            _localViewer.LoadView(ViewType.LoadAccountFromFile);
+            _localViewer.LoadViewAsync(ViewType.LoadAccountFromFile);
         }
 
         private void executeHdWalletButtonCommand() 
         {
-            _localViewer.LoadView(ViewType.LoadAccountFromHDWallet);
+            _localViewer.LoadViewAsync(ViewType.LoadAccountFromHDWallet);
         }
 
         private void executeBackButtonCommand()
         {
-            _localViewer.LoadView(ViewType.Login);
+            _localViewer.LoadViewAsync(ViewType.Login);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

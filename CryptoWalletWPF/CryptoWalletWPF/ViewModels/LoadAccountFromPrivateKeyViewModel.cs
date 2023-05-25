@@ -23,7 +23,7 @@ namespace CryptoWalletWPF.ViewModels
             set 
             {
                 _privateKey = value;
-                OnPropertyChanged("PrivateKey");
+                OnPropertyChanged(nameof(PrivateKey));
             }
         }
         public ICommand loadButtonCommand { get; private set; }
@@ -51,14 +51,14 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeLoadButtonCommand()
         {
-            _localViewer.LoadView(ViewType.Main);
             _sharedDataModel.PrivateKey = PrivateKey;
             _sharedDataModel.LoadType = LoadingType.PrivateKey;
+            _localViewer.LoadViewAsync(ViewType.Main);
         }
 
         private void executeBackButtonCommand()
         {
-            _localViewer.LoadView(ViewType.LoadAccount);
+            _localViewer.LoadViewAsync(ViewType.LoadAccount);
 
         }
 

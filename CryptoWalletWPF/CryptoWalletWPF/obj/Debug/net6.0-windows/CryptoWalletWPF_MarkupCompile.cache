@@ -16,5 +16,5 @@ D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\App.xaml
 221-1438946589
 Views\AccountCreatingUC.xaml;Views\CreateAccountUC.xaml;Views\HDWalletCreatingUC.xaml;Views\LoadAccountFromFileUC.xaml;Views\LoadAccountFromHDWalletUC.xaml;Views\LoadAccountFromPrivateKeyUC.xaml;Views\LoadAccountUC.xaml;Views\LoginUC.xaml;Views\MainUC.xaml;Views\MainWindow.xaml;
 
-True
+False
 

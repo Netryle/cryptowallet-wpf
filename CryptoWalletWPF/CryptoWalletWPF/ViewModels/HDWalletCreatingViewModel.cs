@@ -81,7 +81,7 @@ namespace CryptoWalletWPF.ViewModels
         {
             if (Password == ConfirmPassword)
             {
-                localViewer.LoadView(ViewType.Main);
+                localViewer.LoadViewAsync(ViewType.Main);
 
                 _sharedDataModel.Mnemonic = _mnemonic;
                 _sharedDataModel.Password = _password;
@@ -90,7 +90,7 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeBackButtonCommand()
         {
-            localViewer.LoadView(ViewType.CreateAccount);
+            localViewer.LoadViewAsync(ViewType.CreateAccount);
         }
 
         private void executeCopyButtonCommand()

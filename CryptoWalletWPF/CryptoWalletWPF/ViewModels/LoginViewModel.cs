@@ -53,14 +53,14 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeLoadAccountButtonCommand()
         {
-            _localViewer.LoadView(ViewType.LoadAccount);
             _sharedDataModel.NetworkName = _selectedNetwork;
+            _localViewer.LoadViewAsync(ViewType.LoadAccount);
         }
 
         private void executeCreateAccountButtonCommand()
-        {
-            _localViewer.LoadView(ViewType.CreateAccount);
+        {            
             _sharedDataModel.NetworkName = _selectedNetwork;
+            _localViewer.LoadViewAsync(ViewType.CreateAccount);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -57,6 +57,56 @@ namespace CryptoWalletWPF.ViewModels
         public ICommand transactionsButtonCommand { get; set; }
         public ICommand logOutButtonCommand { get; private set; }
 
+        private MainViewModel(IViewer viewer, SharedDataModel sharedDataModel)
+        {
+            _localViewer = viewer;
+            _sharedDataModel = sharedDataModel;
+            _mainModel = new MainModel(
+                               _sharedDataModel.PrivateKey,
+                               _sharedDataModel.RpcUrl
+                               );
+        }
+
+        public static async Task<MainViewModel> CreateAsync(IViewer viewer, SharedDataModel sharedDataModel)
+        {
+            var viewModel = new MainViewModel(viewer, sharedDataModel);
+            await viewModel.InitializeAsync();
+            
+            return viewModel;
+        }
+
+        private async Task InitializeAsync()
+        {
+            NetworkName = _sharedDataModel.NetworkName;
+            AccountAddress = _mainModel.GetAccountAddress;
+            await _mainModel.GetAccountBalanceInEth();
+            AccountBalance = _mainModel.GetBalance;
+
+            logOutButtonCommand = new RelayCommand(executeLogOutButtonCommand);
+        }       
+
+        private void executeLogOutButtonCommand()
+        {
+            _localViewer.LoadViewAsync(ViewType.Login);
+        }
+
+        private async void GetBalanceAsync()
+        {
+            await _mainModel.GetAccountBalanceInEth();
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            }
+        }        
+    }
+}
+
+/*
         public MainViewModel(IViewer viewer, SharedDataModel sharedDataModel)
         {
             _localViewer = viewer;
@@ -68,23 +118,10 @@ namespace CryptoWalletWPF.ViewModels
 
             NetworkName = _sharedDataModel.NetworkName;
             AccountAddress = _mainModel.GetAccountAddress;
-            AccountBalance = _mainModel.GetAccountBalanceInEth();
+
+            GetBalanceAsync();
+            AccountBalance = _mainModel.GetBalance;
 
             logOutButtonCommand = new RelayCommand(executeLogOutButtonCommand);
         }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-            }
-        }
-
-        private void executeLogOutButtonCommand()
-        {
-            _localViewer.LoadView(ViewType.Login);
-        }
-    }
-}
+        */

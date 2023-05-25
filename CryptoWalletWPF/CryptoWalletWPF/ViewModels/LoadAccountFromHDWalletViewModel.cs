@@ -48,6 +48,9 @@ namespace CryptoWalletWPF.ViewModels
         {
             _localViewer = viewer;
             _sharedDataModel = sharedDataModel;
+
+            loadButtonCommand = new RelayCommand(executeLoadButtonCommand);
+            backButtonCommand = new RelayCommand(executeBackButtonCommand);
         }
 
         private void executeLoadButtonCommand()

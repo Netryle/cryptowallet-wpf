@@ -42,6 +42,8 @@ namespace CryptoWalletWPF.ViewModels
             }
         }
 
+        ICommand sendTransactionButtonCommand { get; set; }
+
         public string AccountBalance
         {
             get { return _accountBalance; }
@@ -61,10 +63,7 @@ namespace CryptoWalletWPF.ViewModels
         {
             _localViewer = viewer;
             _sharedDataModel = sharedDataModel;
-            _mainModel = new MainModel(
-                               _sharedDataModel.PrivateKey,
-                               _sharedDataModel.RpcUrl
-                               );
+            _mainModel = new MainModel(_sharedDataModel);
         }
 
         public static async Task<MainViewModel> CreateAsync(IViewer viewer, SharedDataModel sharedDataModel)

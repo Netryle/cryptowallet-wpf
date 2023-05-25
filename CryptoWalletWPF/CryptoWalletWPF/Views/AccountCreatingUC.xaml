@@ -7,7 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <Label Content="Your private key:" HorizontalAlignment="Center" Margin="0,111,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Your private key:" HorizontalAlignment="Center" Margin="0,101,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="(Save it for future login)" HorizontalAlignment="Center" Margin="0,133,0,0" VerticalAlignment="Top" Height="26"/>
+
         <TextBox Text="{Binding PrivateKey}"
             x:Name="privateKeyTextBox" Height="20" Margin="20,164,60,216" Width="320" IsReadOnly="True"
             />

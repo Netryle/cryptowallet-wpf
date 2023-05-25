@@ -83,6 +83,7 @@ namespace CryptoWalletWPF.ViewModels
             {                
                 _sharedDataModel.Mnemonic = _mnemonic;
                 _sharedDataModel.Password = _password;
+                _sharedDataModel.LoadType = LoadingType.HDWallet;
 
                 _localViewer.LoadViewAsync(ViewType.Main);
             }
@@ -95,7 +96,7 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeCopyButtonCommand()
         {
-            //stub
+            AccountCreatorModel.CopyText(_mnemonic.ToString());
         }
 
         private string MnemonicWordListToString(string[] wordList)

@@ -58,6 +58,8 @@ namespace CryptoWalletWPF.ViewModels
         private void executeCreateButtonCommand()
         {
             _sharedDataModel.PrivateKey = PrivateKey;
+            _sharedDataModel.LoadType = LoadingType.PrivateKey;
+
             localViewer.LoadViewAsync(ViewType.Main);
         }
 
@@ -68,7 +70,7 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeCopyButtonCommand() 
         {
-            //stub
+            AccountCreatorModel.CopyText(PrivateKey);
         }
     }
 }

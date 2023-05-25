@@ -90,11 +90,6 @@ namespace CryptoWalletWPF.ViewModels
             _localViewer.LoadViewAsync(ViewType.Login);
         }
 
-        private async void GetBalanceAsync()
-        {
-            await _mainModel.GetAccountBalanceInEth();
-        }
-
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

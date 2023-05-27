@@ -42,8 +42,6 @@ namespace CryptoWalletWPF.ViewModels
             }
         }
 
-        ICommand sendTransactionButtonCommand { get; set; }
-
         public string AccountBalance
         {
             get { return _accountBalance; }
@@ -83,6 +81,21 @@ namespace CryptoWalletWPF.ViewModels
 
             logOutButtonCommand = new RelayCommand(executeLogOutButtonCommand);
         }       
+
+        private void executeSendTransactionButtonCommand()
+        {
+
+        }
+
+        private void executeSendTokenButtonCommand() 
+        {
+            
+        }
+
+        private void executeTransactionsButtonCommand() 
+        {
+            
+        }
 
         private void executeLogOutButtonCommand()
         {

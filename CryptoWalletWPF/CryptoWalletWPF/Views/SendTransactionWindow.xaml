@@ -1,0 +1,29 @@
+﻿<Window x:Class="CryptoWalletWPF.ViewModels.SendTransactionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CryptoWalletWPF.ViewModels"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Closing="Window_Closing"
+        Title="SendTransactionWindow" Height="225" Width="325">
+    <Grid>
+        <Grid HorizontalAlignment="Center" Width="325" Height="164" VerticalAlignment="Top">
+            <TextBox HorizontalAlignment="Left" Margin="93,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
+            <TextBox HorizontalAlignment="Left" Margin="185,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="185,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="185,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="To address" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top"/>
+            <Label Content="Amount" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+            <Label Content="Gas price" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+            <Label Content="Gas amount" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid Height="45" VerticalAlignment="Top" Margin="0,164,0,0">
+            <Button Content="Back" HorizontalAlignment="Left" Margin="57,0,0,0" VerticalAlignment="Center" Width="85" Height="25"/>
+            <Button Content="Send" HorizontalAlignment="Left" Margin="188,0,0,0" VerticalAlignment="Center" Width="85" Height="25"/>
+        </Grid>
+    </Grid>
+</Window>

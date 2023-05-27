@@ -1,4 +1,5 @@
-﻿using CryptoWalletWPF.Utility;
+﻿using CryptoWalletWPF.Interfaces;
+using CryptoWalletWPF.Utility;
 using Nethereum.HdWallet;
 using Nethereum.Web3;
 using Nethereum.Web3.Accounts;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CryptoWalletWPF.Models
 {
-    internal class MainModel
+    internal class MainModel : IDialogService
     {
         private SharedDataModel _sharedDataModel;
         private Web3 _web3;

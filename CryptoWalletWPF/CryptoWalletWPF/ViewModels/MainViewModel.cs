@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Media.Media3D;
 
 namespace CryptoWalletWPF.ViewModels
 {
@@ -75,16 +76,19 @@ namespace CryptoWalletWPF.ViewModels
         private async Task InitializeAsync()
         {
             NetworkName = _sharedDataModel.NetworkName;
-            AccountAddress = _mainModel.GetAccountAddress;
-            await _mainModel.GetAccountBalanceInEth();
-            AccountBalance = _mainModel.GetBalance;
+            AccountAddress = _mainModel.AccountAddress;
+
+            await RefreshBalance();
 
             logOutButtonCommand = new RelayCommand(executeLogOutButtonCommand);
+            sendTransactionButtonCommand = new RelayCommand(executeSendTransactionButtonCommand);
         }       
 
-        private void executeSendTransactionButtonCommand()
+        private async void executeSendTransactionButtonCommand()
         {
+            await _mainModel.SendTransaction();
 
+            await RefreshBalance();
         }
 
         private void executeSendTokenButtonCommand() 
@@ -100,6 +104,14 @@ namespace CryptoWalletWPF.ViewModels
         private void executeLogOutButtonCommand()
         {
             _localViewer.LoadViewAsync(ViewType.Login);
+        }
+
+        private async Task RefreshBalance()
+        {
+            await _mainModel.GetAccountBalanceInEth();
+            var balance = _mainModel.Balance;
+            AccountBalance = balance;
+            _sharedDataModel.AccountBalance = balance;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

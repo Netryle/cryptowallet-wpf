@@ -1,5 +1,7 @@
 ﻿using CryptoWalletWPF.Interfaces;
 using CryptoWalletWPF.Utility;
+using CryptoWalletWPF.Views;
+using CryptoWalletWPF.ViewModels;
 using Nethereum.HdWallet;
 using Nethereum.Web3;
 using Nethereum.Web3.Accounts;
@@ -19,8 +21,8 @@ namespace CryptoWalletWPF.Models
         private string _balance;
         private string _rpc;
 
-        public string GetAccountAddress => _account.Address;
-        public string GetBalance
+        public string AccountAddress => _account.Address;
+        public string Balance
         {
             get { return _balance; }
             private set { _balance = value; }
@@ -32,6 +34,8 @@ namespace CryptoWalletWPF.Models
             _rpc = _sharedDataModel.RpcUrl;
 
             LoadAccount();
+            _sharedDataModel.Web3 = _web3;
+            _sharedDataModel.Account = _account;
         }
 
         private void LoadAccount()
@@ -63,14 +67,16 @@ namespace CryptoWalletWPF.Models
 
         public async Task GetAccountBalanceInEth()
         {
-            var balance = await _web3.Eth.GetBalance.SendRequestAsync(GetAccountAddress);
+            var balance = await _web3.Eth.GetBalance.SendRequestAsync(AccountAddress);
             decimal etherBalance = Web3.Convert.FromWei(balance.Value);
-            _balance = etherBalance.ToString();           
+            Balance = etherBalance.ToString();           
         }
 
-        public void SendTransaction()
+        public async Task SendTransaction()
         {
+            var sendTransactionViewModel = await SendTransactionViewModel.CreateAsync(_sharedDataModel);
 
+            IDialogService.ShowSendDialog(sendTransactionViewModel);
         }
 
         public void SendToken()

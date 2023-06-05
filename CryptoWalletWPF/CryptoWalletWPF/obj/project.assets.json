@@ -1283,11 +1283,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GraduateWork\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
+      "projectUniqueName": "C:\\Studying\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
       "projectName": "CryptoWalletWPF",
-      "projectPath": "D:\\GraduateWork\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
+      "projectPath": "C:\\Studying\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
       "packagesPath": "C:\\Users\\netry\\.nuget\\packages\\",
-      "outputPath": "D:\\GraduateWork\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\obj\\",
+      "outputPath": "C:\\Studying\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\netry\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1356,7 +1356,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -123,13 +123,13 @@ namespace CryptoWalletWPF.ViewModels
 
             if (isEnough && isParamsNotNull)
             {
-                var transactionInfo = new TransactionInfo()
-                {
-                    ToAddress = this.ToAddress,
-                    Amount = this.Amount,
-                    GasPrice = this.GasPrice,
-                    GasLimit = this.GasLimit,
-                };
+                var transactionInfo = new TransactionInfo
+                (
+                    ToAddress,
+                    Amount,
+                    GasPrice,
+                    GasLimit
+                );
 
                 var result = await SendTransactionModel.SendTransactionAsync(transactionInfo, _sharedDataModel);
 

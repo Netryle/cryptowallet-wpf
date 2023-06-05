@@ -15,7 +15,7 @@ namespace CryptoWalletWPF.Models
 {
     internal class SendTokenModel
     {
-        public static async Task<bool> SendTransactionAsync(TransactionInfo transactionInfo, SharedDataModel sharedDataModel)
+        public static async Task<bool> SendTokenAsync(TransactionInfo transactionInfo, SharedDataModel sharedDataModel)
         {
             var web3 = sharedDataModel.Web3;
 
@@ -42,9 +42,11 @@ namespace CryptoWalletWPF.Models
             return false;
         }
 
-        public static async Task<BigInteger> GetTokenBalanceAsync(SharedDataModel sharedDataModel, string contractAddress, string addressToCheck)
+        public static async Task<BigInteger> GetTokenBalanceAsync(SharedDataModel sharedDataModel, string contractAddress)
         {
             var web3 = sharedDataModel.Web3;
+            var addressToCheck = sharedDataModel.Account.Address;
+
             var balanceOfFunctionMessage = new BalanceOfFunction()
             {
                 Owner = addressToCheck,
@@ -55,15 +57,25 @@ namespace CryptoWalletWPF.Models
             return balance;
         }
 
+        public static bool IsTokenBalanceEnough(string balance, string amountToSend)
+        {
+            if (decimal.Parse(balance) >= (decimal.Parse(amountToSend.Replace('.', ','))))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         [Function("balanceOf", "uint256")]
-        public class BalanceOfFunction : FunctionMessage
+        private class BalanceOfFunction : FunctionMessage
         {
             [Parameter("address", "_owner", 1)]
             public string Owner { get; set; }
         }
 
         [Function("transfer", "bool")]
-        public class TransferFunction : FunctionMessage
+        private class TransferFunction : FunctionMessage
         {
             [Parameter("address", "_to", 1)]
             public string To { get; set; }

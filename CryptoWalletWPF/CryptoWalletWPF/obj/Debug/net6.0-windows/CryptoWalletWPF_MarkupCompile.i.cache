@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\
+C:\Studying\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\
 CryptoWalletWPF
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\App.xaml
+C:\Studying\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\App.xaml
 121625870669
 
 38-1268507145
-221-1438946589
+221-1741676757
 Views\AccountCreatingUC.xaml;Views\CreateAccountUC.xaml;Views\HDWalletCreatingUC.xaml;Views\LoadAccountFromFileUC.xaml;Views\LoadAccountFromHDWalletUC.xaml;Views\LoadAccountFromPrivateKeyUC.xaml;Views\LoadAccountUC.xaml;Views\LoginUC.xaml;Views\MainUC.xaml;Views\MainWindow.xaml;Views\SendTokenWindow.xaml;Views\SendTransactionWindow.xaml;
 
 True

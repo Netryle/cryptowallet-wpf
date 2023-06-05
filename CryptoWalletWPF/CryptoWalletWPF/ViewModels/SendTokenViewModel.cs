@@ -1,4 +1,5 @@
-﻿using CryptoWalletWPF.Models;
+﻿using CryptoWalletWPF.Interfaces;
+using CryptoWalletWPF.Models;
 using CryptoWalletWPF.Utility;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace CryptoWalletWPF.ViewModels
         private SharedDataModel _sharedDataModel;
         private Window _window;
 
+        private string _tokenBalance;
         private string _contractAddress;
         private string _toAddress;
         private string _tokenAmount;
@@ -33,6 +35,17 @@ namespace CryptoWalletWPF.ViewModels
                 OnPropertyChanged(nameof(ContractAddress));
             }
         }
+
+        public string TokenBalance
+        {
+            get { return _tokenBalance; }
+            set
+            {
+                _tokenBalance = value;
+                OnPropertyChanged(nameof(TokenBalance));
+            }
+        }
+
         public string ToAddress
         {
             get { return _toAddress; }
@@ -74,6 +87,7 @@ namespace CryptoWalletWPF.ViewModels
         }
 
         public ICommand sendButtonCommand { get; set; }
+        public ICommand contractAddressTextBoxChanged { get; set; }
 
         private SendTokenViewModel(SharedDataModel sharedDataModel)
         {
@@ -90,7 +104,8 @@ namespace CryptoWalletWPF.ViewModels
 
         private async Task InitializeAsync()
         {
-            
+            sendButtonCommand = new RelayCommand(executeSendButtonCommand);
+            contractAddressTextBoxChanged = new RelayCommand(executeContractAddressTextBoxChanged);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -104,7 +119,70 @@ namespace CryptoWalletWPF.ViewModels
 
         private async void executeSendButtonCommand()
         {
+            var isEnough = false;
+            var isParamsNotNull = IsParametersNotNull();
 
+            if (!isParamsNotNull)
+            {
+                IDialogService.ShowWarning("Not all fields are filled");
+                return;
+            }
+            else
+            {
+                isEnough = SendTokenModel.IsTokenBalanceEnough(TokenBalance, TokenAmount);
+            }
+
+
+            if (isEnough && isParamsNotNull)
+            {
+                var transactionInfo = new TransactionInfo
+                (
+                    ContractAddress,
+                    ToAddress,
+                    TokenAmount,
+                    GasPrice,
+                    GasLimit
+                );
+
+                var result = await SendTokenModel.SendTokenAsync(transactionInfo, _sharedDataModel);
+
+                if (!result)
+                {
+                    IDialogService.ShowWarning("The transaction failed. Possibly wrong address");
+                }
+                else
+                {
+                    CloseWindow();
+                    IDialogService.ShowMessage("Transaction was successful", "Success");
+                }
+            }
+            else
+            {
+                IDialogService.ShowWarning("Not enough balance for transaction");
+            }
+
+        }
+
+        private async void executeContractAddressTextBoxChanged()
+        {
+            try
+            {
+                var balance = await SendTokenModel.GetTokenBalanceAsync(_sharedDataModel, ContractAddress);
+                TokenBalance = balance.ToString();
+            }
+            catch (Exception ex)
+            {
+                IDialogService.ShowWarning("Wrong contract address");
+            }
+        }
+
+        private bool IsParametersNotNull()
+        {
+            return !string.IsNullOrEmpty(ToAddress) &&
+                   !string.IsNullOrEmpty(GasPrice) &&
+                   !string.IsNullOrEmpty(GasLimit) &&
+                   !string.IsNullOrEmpty(TokenAmount) &&
+                   !string.IsNullOrEmpty(ContractAddress);
         }
 
         private void CloseWindow()

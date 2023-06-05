@@ -1,4 +1,5 @@
-﻿using CryptoWalletWPF.ViewModels;
+﻿using CryptoWalletWPF.Models;
+using CryptoWalletWPF.ViewModels;
 using CryptoWalletWPF.Views;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,26 @@ namespace CryptoWalletWPF.Interfaces
 {
     internal interface IDialogService
     {
-        public static void ShowSendDialog(SendTransactionViewModel viewModel)
+        public static async Task ShowSendTransactionDialog(SharedDataModel sharedDataModel)
         {
+            var sendTransactionViewModel = await SendTransactionViewModel.CreateAsync(sharedDataModel);
             SendTransactionWindow sendTransactionWindow = new SendTransactionWindow();
-            sendTransactionWindow.DataContext = viewModel;
+            sendTransactionWindow.DataContext = sendTransactionViewModel;
             sendTransactionWindow.Owner = Application.Current.MainWindow;
 
-            viewModel.SetWindowLink(sendTransactionWindow);
+            sendTransactionViewModel.SetWindowLink(sendTransactionWindow);
             sendTransactionWindow.ShowDialog();
+        }
+
+        public static async Task ShowSendTokenDialog(SharedDataModel sharedDataModel)
+        {
+            var sendTokenViewModel = await SendTokenViewModel.CreateAsync(sharedDataModel);
+            SendTokenWindow sendTokenWindow = new SendTokenWindow();
+            sendTokenWindow.DataContext = sendTokenViewModel;
+            sendTokenWindow.Owner = Application.Current.MainWindow;
+
+            sendTokenViewModel.SetWindowLink(sendTokenWindow);
+            sendTokenWindow.ShowDialog();
         }
 
         public static bool? ShowDialogWithResult(object content, object viewModel)

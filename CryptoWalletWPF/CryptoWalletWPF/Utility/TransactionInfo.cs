@@ -23,12 +23,10 @@ namespace CryptoWalletWPF.Utility
             Amount = amount;
         }
 
-        public TransactionInfo(string contractAddress,string toAddress, string gasPrice, string gasLimit, string amount)
+        public TransactionInfo(string contractAddress,string toAddress,string amount)
         {
             ContractAddress = contractAddress;
             ToAddress = toAddress;
-            GasPrice = gasPrice;
-            GasLimit = gasLimit;
             Amount = amount;
         }
     }

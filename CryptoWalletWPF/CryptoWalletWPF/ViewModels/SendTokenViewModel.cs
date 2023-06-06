@@ -23,8 +23,6 @@ namespace CryptoWalletWPF.ViewModels
         private string _contractAddress;
         private string _toAddress;
         private string _tokenAmount;
-        private string _gasPrice;
-        private string _gasLimit;
 
         public string ContractAddress
         {
@@ -41,7 +39,7 @@ namespace CryptoWalletWPF.ViewModels
             get { return _tokenBalance; }
             set
             {
-                _tokenBalance = value;
+                _tokenBalance = "Balance: " + value;
                 OnPropertyChanged(nameof(TokenBalance));
             }
         }
@@ -66,28 +64,8 @@ namespace CryptoWalletWPF.ViewModels
             }
         }
 
-        public string GasPrice
-        {
-            get { return _gasPrice; }
-            set
-            {
-                _gasPrice = value;
-                OnPropertyChanged(nameof(GasPrice));
-            }
-        }
-
-        public string GasLimit
-        {
-            get { return _gasLimit; }
-            set
-            {
-                _gasLimit = value;
-                OnPropertyChanged(nameof(GasLimit));
-            }
-        }
-
-        public ICommand sendButtonCommand { get; set; }
-        public ICommand contractAddressTextBoxChanged { get; set; }
+        public ICommand SendButtonCommand { get; set; }
+        public ICommand ContractAddressLostFocus { get; set; }
 
         private SendTokenViewModel(SharedDataModel sharedDataModel)
         {
@@ -104,8 +82,9 @@ namespace CryptoWalletWPF.ViewModels
 
         private async Task InitializeAsync()
         {
-            sendButtonCommand = new RelayCommand(executeSendButtonCommand);
-            contractAddressTextBoxChanged = new RelayCommand(executeContractAddressTextBoxChanged);
+            SendButtonCommand = new RelayCommand(executeSendButtonCommand);
+            ContractAddressLostFocus = new RelayCommand(executeContractAddressTextBoxChanged);
+
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -129,7 +108,7 @@ namespace CryptoWalletWPF.ViewModels
             }
             else
             {
-                isEnough = SendTokenModel.IsTokenBalanceEnough(TokenBalance, TokenAmount);
+                isEnough = SendTokenModel.IsTokenBalanceEnough(TokenBalance.Replace("Balance: ", ""), TokenAmount);
             }
 
 
@@ -139,9 +118,7 @@ namespace CryptoWalletWPF.ViewModels
                 (
                     ContractAddress,
                     ToAddress,
-                    TokenAmount,
-                    GasPrice,
-                    GasLimit
+                    TokenAmount
                 );
 
                 var result = await SendTokenModel.SendTokenAsync(transactionInfo, _sharedDataModel);
@@ -179,8 +156,6 @@ namespace CryptoWalletWPF.ViewModels
         private bool IsParametersNotNull()
         {
             return !string.IsNullOrEmpty(ToAddress) &&
-                   !string.IsNullOrEmpty(GasPrice) &&
-                   !string.IsNullOrEmpty(GasLimit) &&
                    !string.IsNullOrEmpty(TokenAmount) &&
                    !string.IsNullOrEmpty(ContractAddress);
         }

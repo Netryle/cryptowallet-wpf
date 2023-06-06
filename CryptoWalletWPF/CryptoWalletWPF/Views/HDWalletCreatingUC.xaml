@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Your seed phrase" HorizontalAlignment="Left" Margin="181,48,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Label Content="(Save it for future login and recovery)" HorizontalAlignment="Left" Margin="158,75,0,0" VerticalAlignment="Top" Height="26"/>
-        <TextBox Text="{Binding MnemonicString}" x:Name="seedPhraseTextBox" HorizontalAlignment="Left" Margin="158,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="101" TextAlignment="Center" IsReadOnly="True" FontSize="18"/>
+        <TextBox Text="{Binding MnemonicString}" x:Name="seedPhraseTextBox" HorizontalAlignment="Left" Margin="158,106,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="206" Height="101" TextAlignment="Center" IsReadOnly="True" FontSize="18"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="158,209,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
         <Label Content="Confirm password" HorizontalAlignment="Left" Margin="158,257,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="167,237,0,0" VerticalAlignment="Top" Width="197" PasswordChanged="passwordBox_PasswordChanged"/>

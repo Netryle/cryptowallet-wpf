@@ -2,26 +2,34 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoWalletWPF.Views"
         mc:Ignorable="d"
-        Title="SendTokenWindow" Height="275" Width="325">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="114,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201"/>
-        <TextBox HorizontalAlignment="Left" Margin="114,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201"/>
-        <TextBox HorizontalAlignment="Left" Margin="214,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101"/>
-        <TextBox HorizontalAlignment="Left" Margin="214,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101"/>
-        <TextBox HorizontalAlignment="Left" Margin="214,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101"/>
+        MinHeight="225"
+        MinWidth="325"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Title="SendTokenWindow" Height="225" Width="325">
+    <Grid HorizontalAlignment="Center" Width="325" Height="209" VerticalAlignment="Top">
+        <TextBox Text="{Binding ContractAddress}" TextWrapping="NoWrap" HorizontalAlignment="Left" Margin="113,48,0,0" VerticalAlignment="Top" Width="201">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="LostFocus">
+                    <i:InvokeCommandAction Command="{Binding ContractAddressLostFocus}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+        <TextBox Text="{Binding ToAddress}" HorizontalAlignment="Left" Margin="113,78,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="201"/>
+        <TextBox Text="{Binding TokenAmount}" HorizontalAlignment="Left" Margin="213,108,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="101"/>
 
-        <Label Content="Balance" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top"/>
-        <Label Content="Contract address" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
-        <Label Content="To address" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-        <Label Content="Token amount" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-        <Label Content="Gas" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="Gas limit" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding TokenBalance}" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Contract address" HorizontalAlignment="Left" Margin="9,44,0,0" VerticalAlignment="Top"/>
+        <Label Content="To address" HorizontalAlignment="Left" Margin="9,74,0,0" VerticalAlignment="Top"/>
+        <Label Content="Token amount" HorizontalAlignment="Left" Margin="9,104,0,0" VerticalAlignment="Top"/>
 
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="60,224,0,0" VerticalAlignment="Top" Width="85" Height="25" IsCancel="True"/>
-        <Button Content="Send" HorizontalAlignment="Left" Margin="180,224,0,0" VerticalAlignment="Top" Width="84" Height="25"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="59,152,0,0" VerticalAlignment="Top" Width="86" Height="25" IsCancel="True"/>
+        <Button Command="{Binding SendButtonCommand}" Content="Send" HorizontalAlignment="Left" Margin="179,152,0,0" VerticalAlignment="Top" Width="84" Height="25"/>
 
     </Grid>
 </Window>

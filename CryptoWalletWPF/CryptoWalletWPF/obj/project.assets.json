@@ -1272,6 +1272,7 @@
     "net6.0-windows7.0": [
       "Autofac >= 7.0.1",
       "MaterialDesignThemes >= 4.9.0",
+      "Microsoft.Xaml.Behaviors.Wpf >= 1.1.39",
       "NBitcoin >= 7.0.25",
       "Nethereum.HdWallet >= 4.14.0",
       "ShowMeTheXAML.MSBuild >= 2.0.0"
@@ -1283,11 +1284,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Studying\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
+      "projectUniqueName": "D:\\GraduateWork\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
       "projectName": "CryptoWalletWPF",
-      "projectPath": "C:\\Studying\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
+      "projectPath": "D:\\GraduateWork\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
       "packagesPath": "C:\\Users\\netry\\.nuget\\packages\\",
-      "outputPath": "C:\\Studying\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\obj\\",
+      "outputPath": "D:\\GraduateWork\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\netry\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1324,6 +1325,10 @@
             "target": "Package",
             "version": "[4.9.0, )"
           },
+          "Microsoft.Xaml.Behaviors.Wpf": {
+            "target": "Package",
+            "version": "[1.1.39, )"
+          },
           "NBitcoin": {
             "target": "Package",
             "version": "[7.0.25, )"
@@ -1356,7 +1361,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

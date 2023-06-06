@@ -21,14 +21,14 @@ namespace CryptoWalletWPF.Models
 
             var contractAddress = transactionInfo.ContractAddress;
             var toAddress = transactionInfo.ToAddress;
-            var gasPrice = Web3.Convert.ToWei(transactionInfo.GasPrice, UnitConversion.EthUnit.Gwei).ToHexBigInteger();
-            var gasLimit = BigInteger.Parse(transactionInfo.GasLimit).ToHexBigInteger();
-            var amount = BigInteger.Parse(transactionInfo.Amount.Replace('.', ','));            
+
+            var amount = transactionInfo.Amount.Replace('.', ',');
+            var value = Web3.Convert.ToWei(amount, UnitConversion.EthUnit.Ether);
 
             var transfer = new TransferFunction()
             {
                 To = toAddress,
-                TokenAmount = amount
+                TokenAmount = value
             };
 
             var transferHandler = web3.Eth.GetContractTransactionHandler<TransferFunction>();
@@ -42,7 +42,7 @@ namespace CryptoWalletWPF.Models
             return false;
         }
 
-        public static async Task<BigInteger> GetTokenBalanceAsync(SharedDataModel sharedDataModel, string contractAddress)
+        public static async Task<decimal> GetTokenBalanceAsync(SharedDataModel sharedDataModel, string contractAddress)
         {
             var web3 = sharedDataModel.Web3;
             var addressToCheck = sharedDataModel.Account.Address;
@@ -54,7 +54,9 @@ namespace CryptoWalletWPF.Models
             var balanceHandler = web3.Eth.GetContractQueryHandler<BalanceOfFunction>();
             var balance = await balanceHandler.QueryAsync<BigInteger>(contractAddress, balanceOfFunctionMessage);
 
-            return balance;
+            decimal balanceDecimal = (decimal)balance / (decimal)Math.Pow(10, 18);
+
+            return balanceDecimal;
         }
 
         public static bool IsTokenBalanceEnough(string balance, string amountToSend)

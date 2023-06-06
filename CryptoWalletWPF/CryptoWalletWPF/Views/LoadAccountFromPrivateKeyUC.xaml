@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Enter your private key" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" FontSize="20"/>
         <TextBox Text="{Binding PrivateKey}"
-            x:Name="enterPrivateKeyTextBox" HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" TextAlignment="Center"
+            x:Name="enterPrivateKeyTextBox" HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="384" TextAlignment="Center"
             />
         <Button Command="{Binding backButtonCommand}" x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="174,240,0,0" VerticalAlignment="Top" Width="76"/>
         <Button Command="{Binding loadButtonCommand}" x:Name="loadButton" Content="Load" HorizontalAlignment="Left" Margin="300,240,0,0" VerticalAlignment="Top" Width="76"/>

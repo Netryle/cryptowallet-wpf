@@ -13,10 +13,10 @@
         Title="SendTransactionWindow" Height="225" Width="325">
     <Grid>
         <Grid HorizontalAlignment="Center" Width="325" Margin="0,-17,0,62">
-            <TextBox Text="{Binding ToAddress}" HorizontalAlignment="Left" Margin="93,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
-            <TextBox Text="{Binding Amount}" HorizontalAlignment="Left" Margin="185,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox Text="{Binding GasPrice}" HorizontalAlignment="Left" Margin="185,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox Text="{Binding GasLimit}" HorizontalAlignment="Left" Margin="185,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox Text="{Binding ToAddress}" HorizontalAlignment="Left" Margin="93,35,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="212"/>
+            <TextBox Text="{Binding Amount}" HorizontalAlignment="Left" Margin="185,65,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox Text="{Binding GasPrice}" HorizontalAlignment="Left" Margin="185,95,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox Text="{Binding GasLimit}" HorizontalAlignment="Left" Margin="185,125,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
             
             <Label Content="To address" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
             <Label Content="Amount (Eth)" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>

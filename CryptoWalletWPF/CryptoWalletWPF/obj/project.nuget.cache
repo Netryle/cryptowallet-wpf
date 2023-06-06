@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jLM3KAIrE0Ubj1Y8vnNw8VafBUKwJrixFPLJYIDPeuwAURM8UjxVTfBQmqgDXBgXOjlarus58FPtMCPFvUtLBQ==",
+  "dgSpecHash": "jt8Xdj6RwJGuNn4ob6U1DxLXwmu4zZle9/n0WN8WDUK+czB1nbXJQj7S7Ze4EQbrzsmNSiYROkguYzbTGTs9yQ==",
   "success": true,
-  "projectFilePath": "C:\\Studying\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
+  "projectFilePath": "D:\\GraduateWork\\cryptowallet-wpf\\CryptoWalletWPF\\CryptoWalletWPF\\CryptoWalletWPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\netry\\.nuget\\packages\\autofac\\7.0.1\\autofac.7.0.1.nupkg.sha512",
     "C:\\Users\\netry\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",

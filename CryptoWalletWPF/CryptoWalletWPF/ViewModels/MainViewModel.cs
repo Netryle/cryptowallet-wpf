@@ -53,10 +53,10 @@ namespace CryptoWalletWPF.ViewModels
             }
         }
 
-        public ICommand sendTransactionButtonCommand { get; set; }
-        public ICommand sendTokenButtonCommand { get; set; }
-        public ICommand transactionsButtonCommand { get; set; }
-        public ICommand logOutButtonCommand { get; private set; }
+        public ICommand SendTransactionButtonCommand { get; private set; }
+        public ICommand SendTokenButtonCommand { get; private set; }
+        public ICommand TransactionsButtonCommand { get; private set; }
+        public ICommand LogOutButtonCommand { get; private set; }
 
         private MainViewModel(IViewer viewer, SharedDataModel sharedDataModel)
         {
@@ -80,8 +80,9 @@ namespace CryptoWalletWPF.ViewModels
 
             await RefreshBalance();
 
-            logOutButtonCommand = new RelayCommand(executeLogOutButtonCommand);
-            sendTransactionButtonCommand = new RelayCommand(executeSendTransactionButtonCommand);
+            LogOutButtonCommand = new RelayCommand(executeLogOutButtonCommand);
+            SendTransactionButtonCommand = new RelayCommand(executeSendTransactionButtonCommand);
+            SendTokenButtonCommand = new RelayCommand(executeSendTokenButtonCommand);
         }       
 
         private async void executeSendTransactionButtonCommand()
@@ -91,9 +92,9 @@ namespace CryptoWalletWPF.ViewModels
             await RefreshBalance();
         }
 
-        private void executeSendTokenButtonCommand() 
+        private async void executeSendTokenButtonCommand() 
         {
-            
+            await _mainModel.SendToken();
         }
 
         private void executeTransactionsButtonCommand() 

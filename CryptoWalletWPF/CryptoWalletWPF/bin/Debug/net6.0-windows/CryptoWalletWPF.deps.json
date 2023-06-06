@@ -10,6 +10,7 @@
         "dependencies": {
           "Autofac": "7.0.1",
           "MaterialDesignThemes": "4.9.0",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39",
           "NBitcoin": "7.0.25",
           "Nethereum.HdWallet": "4.14.0",
           "ShowMeTheXAML.MSBuild": "2.0.0"

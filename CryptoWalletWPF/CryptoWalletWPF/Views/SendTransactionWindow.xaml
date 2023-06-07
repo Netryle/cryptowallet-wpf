@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         Title="SendTransactionWindow" Height="225" Width="325">
     <Grid>
-        <Grid HorizontalAlignment="Center" Width="325" Margin="0,-17,0,62">
+        <Grid HorizontalAlignment="Center" Width="325" Margin="0,-17,0,0" Height="164" VerticalAlignment="Top">
             <TextBox Text="{Binding ToAddress}" HorizontalAlignment="Left" Margin="93,35,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="212"/>
             <TextBox Text="{Binding Amount}" HorizontalAlignment="Left" Margin="185,65,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
             <TextBox Text="{Binding GasPrice}" HorizontalAlignment="Left" Margin="185,95,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>

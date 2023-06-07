@@ -9,20 +9,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <DataGrid ItemsSource="{Binding Transactions}" AutoGenerateColumns="False" Margin="0,62,0,0">
+        <DataGrid ItemsSource="{Binding Transactions}" AutoGenerateColumns="False" CanUserResizeRows="False" IsReadOnly="True" Margin="0,88,0,10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="From" Binding="{Binding From}" Width="*" CanUserResize="False" />
                 <DataGridTextColumn Header="To" Binding="{Binding To}" Width="*" CanUserResize="False" />
                 <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="*" CanUserResize="False" />
                 <DataGridTextColumn Header="Gas" Binding="{Binding Gas}" Width="*" CanUserResize="False" />
-                <DataGridTextColumn Header="BlockHash" Binding="{Binding BlockHash}" Width="*" CanUserResize="False" />
-                <DataGridTextColumn Header="TransactionHash" Binding="{Binding TransactionHash}" Width="*" CanUserResize="False" />
+                <DataGridTextColumn Header="BlockHash" Binding="{Binding BlockHash}" Width="70" CanUserResize="False" />
+                <DataGridTextColumn Header="TransactionHash" Binding="{Binding TransactionHash}" Width="100" CanUserResize="False" />
                 <DataGridTextColumn Header="Data" Binding="{Binding Data}" Width="*" CanUserResize="False" />
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*" CanUserResize="False" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <controls:IntegerUpDown Value="{Binding BlockNumber}" Minimum="1" Maximum="50" Margin="468,11,31,352" >
+        <controls:IntegerUpDown Value="{Binding BlockNumber}" Minimum="1" Maximum="50" Margin="470,24,29,339" >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="ValueChanged">
                     <i:InvokeCommandAction Command="{Binding AmountOfBlockChangedCommand}" />
@@ -30,8 +30,8 @@
             </i:Interaction.Triggers>
         </controls:IntegerUpDown>
 
-        <Button Command="{Binding BackButtonCommand}" Content="Back" HorizontalAlignment="Left" Margin="29,15,0,0" VerticalAlignment="Top" Width="117" Height="33"/>
+        <Button Command="{Binding BackButtonCommand}" Content="Back" HorizontalAlignment="Left" Margin="31,28,0,0" VerticalAlignment="Top" Width="117" Height="33"/>
 
-        <Label Content="Number of blocks" HorizontalAlignment="Left" Margin="311,14,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Number of blocks" HorizontalAlignment="Left" Margin="313,27,0,0" VerticalAlignment="Top" FontSize="18"/>
     </Grid>
 </UserControl>

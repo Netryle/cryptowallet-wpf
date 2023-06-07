@@ -1,5 +1,5 @@
 ﻿using CryptoWalletWPF.Models;
-using CryptoWalletWPF.NewViews;
+using CryptoWalletWPF.Views;
 using CryptoWalletWPF.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,7 @@ namespace CryptoWalletWPF.Views
         CreateAccount,
         AccountCreating,
         HDWalletCreating,
+        Transactions
     }
 
     /// <summary>
@@ -55,7 +56,7 @@ namespace CryptoWalletWPF.Views
             {
                 case ViewType.Main:
                     var mainView = new MainUC();
-                    var mainViewModel = await MainViewModel.CreateAsync(this, _sharedDataModel);//new MainViewModel(this, _sharedDataModel);
+                    var mainViewModel = await MainViewModel.CreateAsync(this, _sharedDataModel);
 
                     mainView.DataContext = mainViewModel;
                     OutputView.Content = mainView;
@@ -131,6 +132,15 @@ namespace CryptoWalletWPF.Views
 
                     hdWalletCreatingView.DataContext = hdWalletCreatingViewModel;
                     OutputView.Content = hdWalletCreatingView;
+
+                    break;
+
+                case ViewType.Transactions:
+                    var transactionsView = new TransactionsUC();
+                    var transactionsViewModel = await TransactionsViewModel.CreateAsync(this, _sharedDataModel);
+
+                    transactionsView.DataContext = transactionsViewModel;
+                    OutputView.Content = transactionsView;
 
                     break;
 

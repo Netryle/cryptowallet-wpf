@@ -80,11 +80,6 @@ namespace CryptoWalletWPF.Models
         public async Task SendToken()
         {
             await IDialogService.ShowSendTokenDialog(_sharedDataModel);
-        }
-
-        public void GetTransactions()
-        {
-
-        }        
+        }     
     }
 }

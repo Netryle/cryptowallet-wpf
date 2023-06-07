@@ -43,6 +43,9 @@
     <Compile Update="Views\SendTransactionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\TransactionsUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\AccountCreatingUC.xaml">
@@ -79,6 +82,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SendTransactionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TransactionsUC.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

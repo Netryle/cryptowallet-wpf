@@ -83,6 +83,7 @@ namespace CryptoWalletWPF.ViewModels
             LogOutButtonCommand = new RelayCommand(executeLogOutButtonCommand);
             SendTransactionButtonCommand = new RelayCommand(executeSendTransactionButtonCommand);
             SendTokenButtonCommand = new RelayCommand(executeSendTokenButtonCommand);
+            TransactionsButtonCommand = new RelayCommand(executeTransactionsButtonCommand);
         }       
 
         private async void executeSendTransactionButtonCommand()
@@ -99,7 +100,7 @@ namespace CryptoWalletWPF.ViewModels
 
         private void executeTransactionsButtonCommand() 
         {
-            
+            _localViewer.LoadViewAsync(ViewType.Transactions);
         }
 
         private void executeLogOutButtonCommand()

@@ -29,8 +29,6 @@ namespace CryptoWalletWPF.ViewModels
         private string _gasPrice;
         private string _gasLimit;
 
-        public event EventHandler CloseWindowRequested;
-
         public string ToAddress
         {
             get { return _toAddress; }

@@ -7,11 +7,13 @@
              mc:Ignorable="d" 
               d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <Label Content="Load from" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button Command="{Binding privateKeyButtonCommand}" x:Name="privateKeyButton" Content="Private key" HorizontalAlignment="Center" Margin="0,165,0,0" VerticalAlignment="Top" Width="130" Height="35"/>
-        <!--<Button Command="{Binding accountFileButtonCommand}" x:Name="accountFileButton" Content="Account file" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="35" Margin="0,205,0,0"/>-->
-        <Button Command="{Binding hdWalletButtonCommand}" x:Name="walletHDButton" Content="HD Wallet" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Height="35" Margin="0,205,0,0"/>
-        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Center" Margin="0,328,0,0" VerticalAlignment="Top" Width="130" Height="35"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Images\back.jpg" />
+        </Grid.Background>
+        <Label Content="Load from" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Style="{StaticResource HeaderStyle}"/>
+        <Button Command="{Binding privateKeyButtonCommand}" x:Name="privateKeyButton" Content="Private key" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}"/>
+        <Button Command="{Binding hdWalletButtonCommand}" x:Name="walletHDButton" Content="HD Wallet" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,230,0,0" Style="{StaticResource ButtonStyle}"/>
+        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}"/>
 
     </Grid>
 </UserControl>

@@ -7,16 +7,21 @@
              mc:Ignorable="d" 
               d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <Label Content="Your seed phrase" HorizontalAlignment="Left" Margin="181,48,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="(Save it for future login and recovery)" HorizontalAlignment="Left" Margin="158,75,0,0" VerticalAlignment="Top" Height="26"/>
-        <TextBox Text="{Binding MnemonicString}" x:Name="seedPhraseTextBox" HorizontalAlignment="Left" Margin="158,106,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="206" Height="101" TextAlignment="Center" IsReadOnly="True" FontSize="18"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="158,209,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
-        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="158,257,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="167,237,0,0" VerticalAlignment="Top" Width="197" PasswordChanged="passwordBox_PasswordChanged"/>
-        <PasswordBox x:Name="confirmPasswordBox" HorizontalAlignment="Left" Margin="167,285,0,0" VerticalAlignment="Top" Width="197" PasswordChanged="confirmPasswordBox_PasswordChanged"/>
-        <Button Command="{Binding createButtonCommand}" Content="Create" HorizontalAlignment="Left" Margin="276,323,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Left" Margin="181,323,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button Command="{Binding copyButtonCommand}" x:Name="copyButton" Content="C" HorizontalAlignment="Left" Margin="369,106,0,0" VerticalAlignment="Top" Height="25" Width="26"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Images\back2.jpg" />
+        </Grid.Background>
+        <Label Content="Your seed phrase" HorizontalAlignment="Left" Margin="174,26,0,0" VerticalAlignment="Top" Style="{StaticResource HeaderStyle}"/>
+        <Label Content="(Save it for future login and recovery)" HorizontalAlignment="Center" Margin="0,64,0,0" VerticalAlignment="Top" Style="{StaticResource SmallTextStyle}"/>
+        <TextBox Text="{Binding MnemonicString}" x:Name="seedPhraseTextBox" HorizontalAlignment="Left" Margin="169,110,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="206" Height="100" TextAlignment="Center" IsReadOnly="True" FontSize="18"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="169,212,0,0" VerticalAlignment="Top" Style="{StaticResource TextStyle}"/>
+        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="169,260,0,0" VerticalAlignment="Top" Style="{StaticResource TextStyle}"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="174,246,0,0" VerticalAlignment="Top" Width="197" PasswordChanged="passwordBox_PasswordChanged"/>
+        <PasswordBox x:Name="confirmPasswordBox" HorizontalAlignment="Left" Margin="174,294,0,0" VerticalAlignment="Top" Width="197" PasswordChanged="confirmPasswordBox_PasswordChanged"/>
+        <Button Command="{Binding createButtonCommand}" Content="Create" Margin="290,326,0,0" Style="{StaticResource ButtonStyle}" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
+        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Right" Margin="0,326,290,0" Style="{StaticResource ButtonStyle}" Height="36" VerticalAlignment="Top"/>
+        <Button Command="{Binding copyButtonCommand}" HorizontalAlignment="Left" Margin="380,110,0,0" VerticalAlignment="Top" Style="{StaticResource CopyButtonStyle}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Source="D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Images\copy.png" Width="25" Height="25"/>
+        </Button>
 
     </Grid>
 </UserControl>

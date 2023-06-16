@@ -11,7 +11,7 @@ false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\App.xaml
 13-2139198178
-
+11762862393
 39-332944974
 2261365629019
 Views\AccountCreatingUC.xaml;Views\CreateAccountUC.xaml;Views\HDWalletCreatingUC.xaml;Views\LoadAccountFromFileUC.xaml;Views\LoadAccountFromHDWalletUC.xaml;Views\LoadAccountFromPrivateKeyUC.xaml;Views\LoadAccountUC.xaml;Views\LoginUC.xaml;Views\MainUC.xaml;Views\MainWindow.xaml;Views\SendTokenWindow.xaml;Views\SendTransactionWindow.xaml;Views\TransactionsUC.xaml;

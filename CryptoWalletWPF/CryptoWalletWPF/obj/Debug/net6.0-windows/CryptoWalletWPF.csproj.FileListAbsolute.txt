@@ -88,3 +88,5 @@ D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\CryptoWalletWPF.pdb
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\CryptoWalletWPF.genruntimeconfig.cache
 D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\ref\CryptoWalletWPF.dll
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\CryptoWalletWPF_Content.g.cs
+D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\obj\Debug\net6.0-windows\App.baml

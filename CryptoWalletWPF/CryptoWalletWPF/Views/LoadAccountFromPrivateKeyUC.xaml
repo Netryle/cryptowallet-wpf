@@ -7,12 +7,15 @@
              mc:Ignorable="d" 
               d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <Label Content="Enter your private key" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Images\back2.jpg" />
+        </Grid.Background>
+        <Label Content="Enter your private key" HorizontalAlignment="Center" Margin="0,94,0,0" VerticalAlignment="Top" Style="{StaticResource HeaderStyle}"/>
         <TextBox Text="{Binding PrivateKey}"
             x:Name="enterPrivateKeyTextBox" HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="384" TextAlignment="Center"
             />
-        <Button Command="{Binding backButtonCommand}" x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="174,240,0,0" VerticalAlignment="Top" Width="76"/>
-        <Button Command="{Binding loadButtonCommand}" x:Name="loadButton" Content="Load" HorizontalAlignment="Left" Margin="300,240,0,0" VerticalAlignment="Top" Width="76"/>
+        <Button Command="{Binding backButtonCommand}" x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="135,244,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}"/>
+        <Button Command="{Binding loadButtonCommand}" x:Name="loadButton" Content="Load" Margin="285,244,135,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right" Width="130"/>
 
     </Grid>
 </UserControl>

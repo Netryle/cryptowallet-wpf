@@ -7,15 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <Label Content="Your private key:" HorizontalAlignment="Center" Margin="0,101,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="(Save it for future login)" HorizontalAlignment="Center" Margin="0,133,0,0" VerticalAlignment="Top" Height="26"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Images\back2.jpg" />
+        </Grid.Background>
+        <Label Content="Your private key:" HorizontalAlignment="Center" Margin="0,94,0,0" VerticalAlignment="Top" Style="{StaticResource HeaderStyle}"/>
+        <Label Content="(Save it for future login)" HorizontalAlignment="Center" Margin="0,133,0,0" VerticalAlignment="Top" Style="{StaticResource SmallTextStyle}"/>
 
         <TextBox Text="{Binding PrivateKey}"
-            x:Name="privateKeyTextBox" Height="20" Margin="20,164,60,216" Width="320" IsReadOnly="True" TextWrapping="NoWrap"
+            x:Name="privateKeyTextBox" Height="20" Margin="100,168,100,212" IsReadOnly="True" TextWrapping="NoWrap"
             />
-        <Button Command="{Binding copyButtonCommand}"  x:Name="copyButton" Content="C" HorizontalAlignment="Left" Margin="430,162,0,0" VerticalAlignment="Top" Height="24" Width="26"/>
-        <Button Command="{Binding createButtonCommand}" Content="Create" HorizontalAlignment="Left" Margin="292,234,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Left" Margin="197,234,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button Command="{Binding copyButtonCommand}" HorizontalAlignment="Left" Margin="455,166,0,0" VerticalAlignment="Top" Style="{StaticResource CopyButtonStyle}" BorderBrush="{x:Null}" >
+            <Image Source="D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Images\copy.png" Width="25" Height="25"/>
+        </Button>
+        <Button Command="{Binding createButtonCommand}" Content="Create" Margin="285,244,135,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}"/>
+        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Left" Margin="135,244,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}"/>
 
     </Grid>
 </UserControl>

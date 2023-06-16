@@ -7,11 +7,14 @@
              mc:Ignorable="d" 
               d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <PasswordBox HorizontalAlignment="Center" Margin="0,253,0,0" VerticalAlignment="Top" Width="229" PasswordChanged="PasswordBox_PasswordChanged"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\GraduateWork\cryptowallet-wpf\CryptoWalletWPF\CryptoWalletWPF\Images\back2.jpg" />
+        </Grid.Background>
+        <PasswordBox HorizontalAlignment="Center" Margin="0,259,0,0" VerticalAlignment="Top" Width="230" PasswordChanged="PasswordBox_PasswordChanged"/>
         <TextBox Text="{Binding PhraseString}" HorizontalAlignment="Center" Margin="0,148,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="286" Height="67"/>
-        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Left" Margin="188,326,0,0" VerticalAlignment="Top" Width="75" Height="25"/>
-        <Button Command="{Binding loadButtonCommand}" Content="Load" HorizontalAlignment="Left" Margin="288,326,0,0" VerticalAlignment="Top" Width="75" Height="25"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" FontSize="16" Height="28"/>
-        <Label Content="Seed phrase" HorizontalAlignment="Left" Margin="132,111,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Command="{Binding backButtonCommand}" Content="Back" HorizontalAlignment="Left" Margin="130,326,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}"/>
+        <Button Command="{Binding loadButtonCommand}" Content="Load" Margin="288,326,130,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Style="{StaticResource TextStyle}"/>
+        <Label Content="Seed phrase" HorizontalAlignment="Left" Margin="132,104,0,0" VerticalAlignment="Top" Style="{StaticResource HeaderStyle}"/>
     </Grid>
 </UserControl>

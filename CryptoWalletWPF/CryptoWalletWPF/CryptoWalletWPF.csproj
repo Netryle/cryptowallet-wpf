@@ -5,7 +5,23 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Fonts\**" />
+    <EmbeddedResource Remove="Fonts\**" />
+    <None Remove="Fonts\**" />
+    <Page Remove="Fonts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\background.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="7.0.1" />
@@ -15,6 +31,12 @@
     <PackageReference Include="NBitcoin" Version="7.0.25" />
     <PackageReference Include="Nethereum.HdWallet" Version="4.14.0" />
     <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
